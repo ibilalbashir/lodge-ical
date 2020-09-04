@@ -1,0 +1,42 @@
+@import 'vars';
+
+:host {
+  display: none;
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 420px;
+  box-shadow: 0px 6px 13px rgba(209, 201, 176, 0.52);
+
+  &.visible {
+    display: block;
+  }
+
+  .header {
+    background: @light-teal;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .content {
+    padding: 20px;
+
+    .field-wrapper {
+      margin-bottom: 10px;
+    }
+  }
+
+  .footer {
+    padding: 20px;
+    display: flex;
+
+    .cancel {
+      margin-right: auto;
+    }
+  }
+}

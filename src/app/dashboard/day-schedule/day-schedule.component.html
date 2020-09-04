@@ -1,0 +1,11 @@
+<div class="date">
+  <div class="day-of-week">{{data.date | date: 'EEE'}}</div>
+  <div class="day-of-month">{{data.date | date: 'd'}}</div>
+</div>
+<div class="events">
+  <div class="event" *ngFor="let event of data.events">
+    <div class="time">{{event.date | date: 'h:mm'}} - {{endDate | date: 'h:mm'}}</div>
+    <div class="name">{{event.name}}</div>
+    <div class="details">6 guests - 4 days - Main Lodge</div>
+  </div>
+</div>

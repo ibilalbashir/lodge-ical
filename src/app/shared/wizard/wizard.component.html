@@ -1,0 +1,11 @@
+<div class="title">{{wizardTitle}}</div>
+<div class="progress">
+  <div *ngFor="let step of wizardSteps; let i = index" [class.complete]="i < selectedStepIndex"
+    [class.active]="selectedStep === step">
+    <div class="indicator"></div>
+    <div>{{step.name}}</div>
+  </div>
+</div>
+<div class="content">
+  <ng-content></ng-content>
+</div>

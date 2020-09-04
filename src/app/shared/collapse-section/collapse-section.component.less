@@ -1,0 +1,17 @@
+@import 'vars';
+
+:host {
+  display: block;
+  
+  .section-title {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    > i {
+      &.open {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

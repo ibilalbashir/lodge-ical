@@ -1,0 +1,7 @@
+<div class="section-title" (click)="toggleContent()">
+  <i class="material-icons" [class.open]="showContent">arrow_right</i>
+  {{sectionTitle}}
+</div>
+<div *ngIf="showContent">
+  <ng-content></ng-content>
+</div>

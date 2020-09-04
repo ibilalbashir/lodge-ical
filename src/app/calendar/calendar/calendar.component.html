@@ -1,0 +1,159 @@
+<div class="reservation-details" [class.collapsed]="!detailsVisible">
+  <div class="title">
+    <span>Reservation Details</span>
+  </div>
+  <div class="toggle" (click)="toggleDetails()"><i class="material-icons">keyboard_arrow_left</i></div>
+  <div class="details">
+    <div class="section-title">Guest Information</div>
+    <div class="field-wrapper">
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone">
+    </div>
+    <div class="field-wrapper">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName">
+    </div>
+    <div class="field-wrapper">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName">
+    </div>
+    <div class="field-wrapper">
+      <label for="email">Email</label>
+      <input type="email" id="email">
+    </div>
+    <div class="section-title">Guests</div>
+    <div class="grid">
+      <div class="field-wrapper">
+        <label for="adults">Adults</label>
+        <mat-select>
+          <mat-option [value]="1">1</mat-option>
+        </mat-select>
+      </div>
+      <div class="field-wrapper">
+        <label for="adultLodge">Lodge</label>
+        <mat-select>
+          <mat-option [value]="1">1</mat-option>
+        </mat-select>
+      </div>
+      <div class="field-wrapper">
+        <label for="children">Children (&lt;16)</label>
+        <mat-select>
+          <mat-option [value]="1">1</mat-option>
+        </mat-select>
+      </div>
+      <div class="field-wrapper">
+        <label for="adultLodge">Lodges</label>
+        <mat-select>
+          <mat-option [value]="1">1</mat-option>
+        </mat-select>
+      </div>
+      <mat-checkbox>All guests in one lodge</mat-checkbox>
+    </div>
+    <div class="section-title">Dates</div>
+    <div class="grid">
+      <mat-form-field>
+        <mat-label>ARRIVAL</mat-label>
+        <input matInput [matDatepicker]="arrival" [(ngModel)]="selectedArrivalDate">
+        <mat-datepicker-toggle matSuffix [for]="arrival"></mat-datepicker-toggle>
+        <mat-datepicker #arrival></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>DEPARTURE</mat-label>
+        <input matInput [matDatepicker]="departure" [(ngModel)]="selectedDepartureDate"
+          [min]="minDateForDeparturePicker">
+        <mat-datepicker-toggle matSuffix [for]="departure"></mat-datepicker-toggle>
+        <mat-datepicker #departure></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <button class="secondary" [disabled]="!checkAvailabiltyEnabled" (click)="getAvailableResources()">CHECK
+      AVAILABILITY</button>
+  </div>
+</div>
+<div class="calendar-wrapper">
+  <div class="header">
+    <div class="title">
+      Availability Calendar
+    </div>
+    <div class="date-wrappers" [@enterLeave] *ngIf="!detailsVisible">
+      <mat-form-field>
+        <mat-label>ARRIVAL</mat-label>
+        <input matInput [matDatepicker]="arrival" [(ngModel)]="selectedArrivalDate">
+        <mat-datepicker-toggle matSuffix [for]="arrival"></mat-datepicker-toggle>
+        <mat-datepicker #arrival></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>DEPARTURE</mat-label>
+        <input matInput [matDatepicker]="departure" [(ngModel)]="selectedDepartureDate"
+          [min]="minDateForDeparturePicker">
+        <mat-datepicker-toggle matSuffix [for]="departure"></mat-datepicker-toggle>
+        <mat-datepicker #departure></mat-datepicker>
+      </mat-form-field>
+      <button class="secondary" [disabled]="!checkAvailabiltyEnabled" (click)="getAvailableResources()">CHECK
+        AVAILABILITY</button>
+    </div>
+    <mat-select [(ngModel)]="daysToShow" class="chromeless number-of-days">
+      <mat-option [value]="7">DISPLAY 7 DAYS</mat-option>
+      <mat-option [value]="30">DISPLAY 30 DAYS</mat-option>
+      <mat-option [value]="60">DISPLAY 60 DAYS</mat-option>
+    </mat-select>
+    <div class="display">
+      <div class="legend">Legend: </div>
+      <label class="display-check available">
+        <input type="checkbox">
+        <i class="material-icons">check</i>
+        <span class="full">Available</span>
+        <span class="short">A</span>
+      </label>
+      <label class="display-check reserved">
+        <input type="checkbox">
+        <i class="material-icons">check</i>
+        <span class="full">Reserved</span>
+        <span class="short">R</span>
+      </label>
+      <label class="display-check confirmed">
+        <input type="checkbox">
+        <i class="material-icons">check</i>
+        <span class="full">Confirmed</span>
+        <span class="short">C</span>
+      </label>
+    </div>
+  </div>
+  <div class="calendar-flex-parent">
+    <div class="calendar">
+      <full-calendar defaultView="resourceTimeline" [plugins]="calendarPlugins" (eventRender)="eventRender($event)"
+        [resourceColumns]="resourceColumns" [slotLabelFormat]="slotLabelFormat" [header]="header" height="parent"
+        resourceLabelText=" " slotDuration="24:00:00" [editable]="true" [visibleRange]="visibleRange"
+        [deepChangeDetection]="true" [resources]="resourceData" [events]="eventsData" (eventClick)="eventClick($event)"
+        (eventDragStart)="onEventDragStart($event)" scrollTime="00:00:00" resourceAreaWidth="200px"
+        [customButtons]="customButtons">
+      </full-calendar>
+    </div>
+  </div>
+  <div class="footer" [class.show]="selectedResources.length > 0">
+    <button class="primary" (click)="clearSelection()">CLEAR SELECTION</button>
+    <div class="selected-resources" *ngIf="selectedResources.length > 0">
+      {{selectedResources.length}}
+      <ng-container *ngIf="selectedResources.length === 1">Room Selected</ng-container>
+      <ng-container *ngIf="selectedResources.length > 1">Rooms Selected</ng-container>
+    </div>
+    <button class="secondary" (click)="bookReservation()">BOOK RESERVATION</button>
+  </div>
+</div>
+
+<ng-template #resourceInfoPlaceholder let-data="data">
+  <div class="fc-cell-content">
+    <span class="fc-expander-space">
+      <span class="fc-icon"></span>
+    </span>
+    <div class="resource-info" [class.is-child]="data._resource.parentId > 0">
+      <div class="name">{{data.title}}</div>
+      <div class="guest-capacity" *ngIf="data.extendedProps.guests">{{data.extendedProps.guests}} guests</div>
+      <div class="available-beds" *ngIf="data.extendedProps.beds">
+        <span *ngFor="let bed of data.extendedProps.beds; let idx = index;">
+          {{bed}}<ng-container *ngIf="idx === 0">-</ng-container>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</ng-template>

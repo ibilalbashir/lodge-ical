@@ -1,0 +1,35 @@
+<div class="section-title">
+  <div class="icon" [ngSwitch]="correspondenceType">
+    <i class="material-icons" *ngSwitchCase="'email'">email</i>
+    <i class="material-icons" *ngSwitchCase="'confirmation'">book</i>
+  </div>
+  {{correspondenceTitle}}
+  <div class="date">
+    {{date | date: 'shortDate'}}
+  </div>
+</div>
+<div class="description">
+  <div class="title">Description:</div>
+  <div>{{description}}</div>
+</div>
+<div class="actions">
+  <mat-slide-toggle [checked]="followUp">
+    Follow up?
+  </mat-slide-toggle>
+  <div class="field-wrapper">
+    <label for="assigned_to">Assigned to</label>
+    <mat-select name="assigned_to" id="assigned_to">
+      <mat-option value="Gloria L">Gloria L</mat-option>
+    </mat-select>
+  </div>
+  <div class="field-wrapper date">
+    <label for="date">Date</label>
+    <div>
+      <div class="mat-datepicker-wrapper">
+        <input class="date-input" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    </div>
+  </div>
+</div>

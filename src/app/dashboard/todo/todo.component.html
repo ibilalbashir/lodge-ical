@@ -1,0 +1,16 @@
+<div class="details">
+  <div class="flex">
+    <div class="status" [ngClass]="statusClass">{{data.state}}</div>
+    <div class="type">{{data.type}}</div>
+  </div>
+  <div></div>
+  <div class="name">{{data.name}}</div>
+  <div class="description">{{data.description}}</div>
+</div>
+<div class="date">
+  <div class="date-wrapper">
+    <div class="due">DUE</div>
+    <div class="day">{{data.dueDate | date: 'd'}}</div>
+  </div>
+  <div class="time">{{data.dueDate | date: 'shortTime'}}</div>
+</div>

@@ -1,0 +1,43 @@
+<div class="todo">
+  <div class="header">
+    <div class="title">To Do</div>
+    <button class="icon" (click)="showAddReminder = !showAddReminder">
+      <i class="material-icons">add_box</i> ADD REMINDER
+    </button>
+  </div>
+  <div class="content">
+    <div class="todo-filters">
+      <div class="date">
+        02/18/2020
+      </div>
+      <div>
+        OLDER FIRST | ALL
+      </div>
+    </div>
+    <rbs-todo *ngFor="let todo of todos" [data]="todo"></rbs-todo>
+  </div>
+  <rbs-add-reminder [(showReminder)]="showAddReminder"></rbs-add-reminder>
+</div>
+<div class="calendar">
+  <div class="header">
+    <div class="title">Calendar</div>
+  </div>
+  <div class="content">
+    <rbs-day-schedule *ngFor="let day of schedule" [data]="day"></rbs-day-schedule>
+  </div>
+</div>
+<div class="account-balance">
+  <div class="header">
+    <div class="title">Account Balance</div>
+  </div>
+  <div class="content">
+    <div class="flex">
+      <div class="search-input">
+        <input type="text" placeholder="Enter guest name ...">
+      </div>
+      <button class="primary">SEARCH</button>
+    </div>
+    <div class="section-subtitle">MOST RECENT</div>
+    <rbs-account-overview *ngFor="let overview of accountOverviews" [data]="overview"></rbs-account-overview>
+  </div>
+</div>

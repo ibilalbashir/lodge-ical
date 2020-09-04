@@ -1,0 +1,82 @@
+<div class="smart-filter">
+  <div class="page-header">
+    <div class="section-title">Smart Filter</div>
+  </div>
+  <div class="filter-content">
+    <div class="section">
+      <div class="section-subtitle">VISIT DATE</div>
+      <mat-radio-group [(ngModel)]="visitDate" class="radio-group">
+        <mat-radio-button value="present">Present</mat-radio-button>
+        <mat-radio-button value="future">Future</mat-radio-button>
+        <mat-radio-button value="past">Past</mat-radio-button>
+        <mat-radio-button value="custom">Custom date range</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="section">
+      <div class="section-subtitle">STATUS</div>
+      <div class="checkbox-group">
+        <mat-checkbox>All Guests</mat-checkbox>
+        <mat-checkbox>Inquiry</mat-checkbox>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid-content">
+  <div class="page-header">
+    <div class="section-title">Reservations</div>
+    <div class="search-input">
+      <input type="text" placeholder="Enter guest name ...">
+    </div>
+    <div class="flex-spacer"></div>
+    <button class="icon"><i class="material-icons">add_box</i> ADD GUEST</button>
+    <button class="icon">ACTIONS</button>
+  </div>
+  <div class="content">
+    <div class="grid-scroll-wrapper">
+      <table mat-table [dataSource]="guests">
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>STATUS</th>
+          <td mat-cell *matCellDef="let element">
+            <div class="status" [ngClass]="element.status">
+              {{element.status}}
+            </div>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>NAME</th>
+          <td mat-cell *matCellDef="let element" class="name">
+            <span [routerLink]="element.id">
+              {{element.name}}
+            </span>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="bookingDetails">
+          <th mat-header-cell *matHeaderCellDef>DETAILS</th>
+          <td mat-cell *matCellDef="let element" class="details">{{element.bookingDetails}}</td>
+        </ng-container>
+        <ng-container matColumnDef="location">
+          <th mat-header-cell *matHeaderCellDef>LOCATION</th>
+          <td mat-cell *matCellDef="let element">{{element.location}}</td>
+        </ng-container>
+        <ng-container matColumnDef="contactNumber">
+          <th mat-header-cell *matHeaderCellDef>CONTACT</th>
+          <td mat-cell *matCellDef="let element">{{element.contactNumber}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</div>

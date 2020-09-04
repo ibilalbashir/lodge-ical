@@ -1,0 +1,19 @@
+<div class="icon-wrapper">
+  <img src="assets/icons/header-icon.svg" alt="icon">
+</div>
+<div class="nav-item" *ngFor="let tab of tabs" [routerLink]="tab.route" routerLinkActive="active">
+  <div>
+    <span>{{tab.title}}</span>
+    <div *ngIf="tab.notifications" class="notification">{{tab.notifications}}</div>
+  </div>
+</div>
+<div class="spacer"></div>
+<button class="button icon"><i _ngcontent-brs-c146="" class="material-icons">add_box</i>NEW RESERVATION</button>
+<div class="user" [matMenuTriggerFor]="appMenu">
+  <div>John Doe</div>
+  <i class="material-icons">account_circle</i>
+</div>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item>User Profile</button>
+  <button mat-menu-item routerLink="settings">Settings</button>
+</mat-menu>

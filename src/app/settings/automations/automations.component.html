@@ -1,0 +1,92 @@
+<div>When this happens ...</div>
+<div></div>
+<div>Do this.</div>
+<ng-container *ngFor="let automation of automations">
+  <div class="automation">
+    <div class="title">
+      <div class="toggle" (click)="automation.open = !automation.open">
+        <i *ngIf="!automation.open" class="material-icons">add_box</i>
+        <i *ngIf="automation.open" class="material-icons">indeterminate_check_box</i>
+      </div>
+      <div>{{automation.trigger}}</div>
+    </div>
+    <div class="content" *ngIf="automation.open" [ngSwitch]="automation.type">
+      <rbs-recurrence *ngSwitchCase="'recurrence'"></rbs-recurrence>
+    </div>
+  </div>
+  <div class="arrow"></div>
+  <div class="automation">
+    <div class="title">
+      <div class="toggle" (click)="automation.open = !automation.open"><i class="material-icons">add_box</i></div>
+      <div>{{automation.action}}</div>
+    </div>
+    <div class="content" *ngIf="automation.open">
+      
+      <button mat-raised-button style="background-color: teal; color: #ffffff;"> CHOOSE REPORT </button> <span  style="size:5px; padding: 20px;"> <b> PORONUI_SNAPSHOT</b> </span> 
+      <br>
+      <mat-form-field appearance="none">
+        
+        <mat-select placeholder="Email" style="width: 78%; margin-top: 10px; border: 1px solid teal;">
+          <mat-option value="option1"  value="email" >Option 1</mat-option>
+          <mat-option value="option2" placeholder="Email" >Option 2</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+
+      <!-- <mat-label>Email</mat-label>
+        <mat-select >
+          
+          <mat-option value="option1"  value="email" >Option 1</mat-option>
+          <mat-option value="option2" placeholder="Email" >Option 2</mat-option>
+        </mat-select> -->
+     
+       
+    
+
+      <mat-card style="background-color: #F9F7F1; margin-top: 20px;"> <p style="  color: #585449;"> Subject: </p><br>
+
+        <div _ngcontent-ond-c185="" class="automation ng-star-inserted">
+          <!-- <div _ngcontent-ond-c185="" class="title">
+            <div _ngcontent-ond-c185="" class="toggle"> -->
+            <!-- <i _ngcontent-ond-c185="" class="material-icons ng-star-inserted">add_box</i> -->
+            <!-- </div> -->
+          <div _ngcontent-ond-c185="">Your financial report is attached </div>
+        <!-- </div> -->
+      </div>
+        
+
+        <!-- <mat-form-field class="automation ng-star-inserted" appearance="outline" style="width: 100%; background-color: #ffffff; border: #333333; margin-top: 10px;">     
+          <input matInput value="Your financial report is attached" > <br>
+        </mat-form-field> <br> -->
+        
+        <p style="margin-top: 10px; margin-bottom: 10px; color: #585449;"> Body: </p>
+
+        <mat-form-field appearance="outline" style="width: 100%;   background-color: #ffffff; border: #333333; ">     
+          <textarea matInput placeholder="Here are of your details{Report Name} lorem" style="height: 150px;"></textarea>
+        </mat-form-field> <br>
+
+         <div style="text-align: end; margin-top: 15px;">
+         <button mat-raised-button style="background-color: teal; color: #ffffff;"> +PARAMETERS </button>
+         </div>
+
+      </mat-card>
+
+      <div style="margin-top: 15px; " >
+        
+              <span style="text-align: start;">
+                <button mat-raised-button> Cancel </button>
+              </span>
+               
+            
+             <span style="margin-left: 250px;">
+              <button mat-raised-button style="background-color: teal; color: #ffffff; margin-right: 5px;"> SAVE </button>
+              <button mat-raised-button style="background-color: teal; color: #ffffff; "> PREVIEW </button>
+            </span>
+
+      </div>
+
+    </div>
+  </div>
+</ng-container>
+
+<ng-template></ng-template>

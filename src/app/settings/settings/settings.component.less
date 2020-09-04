@@ -1,0 +1,19 @@
+@import 'vars';
+
+:host {
+  .side-nav-host();
+
+  nav {
+    a {
+      border-right: solid 4px transparent;
+      &.active {
+        background: #E5E3DC;
+        border-right-color: @teal;
+      }
+    }
+  }
+
+  .content {
+    justify-content: stretch;
+  }
+}

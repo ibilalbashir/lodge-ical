@@ -1,0 +1,25 @@
+<div class="header">ADD REMINDER</div>
+<div class="content">
+  <div class="field-wrapper">
+    <label for="assign_to">Assign To</label>
+    <mat-select>
+      <mat-option *ngFor="let option of assignToOptions" [value]="option.value">{{option.displayValue}}</mat-option>
+    </mat-select>
+  </div>
+  <div class="field-wrapper">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" rows="4"></textarea>
+  </div>
+  <div class="field-wrapper">
+    <label for="due_date">Due Date</label>
+    <div class="mat-datepicker-wrapper">
+      <input class="date-input" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <button class="cancel" (click)="close()">CANCEL</button>
+  <button class="secondary" (click)="save()">SAVE</button>
+</div>

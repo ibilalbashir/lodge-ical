@@ -1,0 +1,38 @@
+<div class="section-title">Custom Recurrence</div>
+<div>
+  <div>Repeat every</div>
+  <input type="text" class="repeat">
+  <mat-select class="repeat-select" [(value)]="selectedRepeat">
+    <mat-option *ngFor="let option of options" [value]="option.value">
+      {{option.display}}
+    </mat-option>
+  </mat-select>
+</div>
+<div>
+  <div>Repeat on</div>
+  <div class="day-select" *ngFor="let day of days" (click)="selectDay(day)" [class.selected]="selectedDay === day">
+    {{day.display}}</div>
+</div>
+<div>Ends</div>
+<div>
+  <mat-radio-group [(ngModel)]="ends">
+    <div>
+      <mat-radio-button value="never">Never</mat-radio-button>
+    </div>
+    <div>
+      <mat-radio-button value="on">On</mat-radio-button>
+      <div class="mat-datepicker-wrapper">
+        <input class="date-input" matInput [matDatepicker]="picker" [disabled]="ends !== 'on'">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    </div>
+    <div>
+      <mat-radio-button value="after">After</mat-radio-button>
+      <div class="number-occurences">
+        <input type="text" [disabled]="ends !== 'after'">
+        <div>occurences</div>
+      </div>
+    </div>
+  </mat-radio-group>
+</div>

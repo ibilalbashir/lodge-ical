@@ -1,0 +1,47 @@
+@import 'vars';
+
+:host {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  grid-template-rows: auto;
+  row-gap: 20px;
+  align-items: start;
+  align-content: start;
+  
+  .automation {
+    padding: 12px;
+    background: #FFFFFF;
+    font-size: 16px;
+    border: solid 1px @ui-border;
+    border-radius: 4px;
+
+    .title {
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle {
+      color: @teal;
+      margin-right: 16px;
+      cursor: default;
+    }
+
+    .content {
+      padding: 10px;
+    }
+  }
+
+  .arrow {
+    position: relative;
+
+    &:after {
+      content: '\e5e1';
+      font-family: Material Icons;
+      position: absolute;
+      left: 10px;
+      top: 18px;
+      font-size: 24px;
+      color: @yellow;
+    }
+  }
+}

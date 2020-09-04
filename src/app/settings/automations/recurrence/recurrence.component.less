@@ -1,0 +1,88 @@
+@import 'vars';
+
+:host {
+  > div {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    > * {
+      margin-right: 10px;
+    }
+
+    input {
+      width: 50px;
+      border: none;
+      transition: all 130ms ease-in-out;
+      background: fade(@secondary-foreground, 20);
+      border-radius: 4px;
+      text-align: center;
+      border: solid 1px transparent;
+      padding: 4px 8px;
+
+      &:focus {
+        outline: none;
+        border-color: @teal;
+      }
+    }
+
+    .repeat-select {
+      width: 60px;
+    }
+
+    .day-select {
+      width: 20px;
+      height: 20px;
+      background: fade(@secondary-foreground, 20);
+      border-radius: 10px;
+      font-size: 10px;
+      line-height: 20px;
+      text-align: center;
+      cursor: pointer;
+
+      &.selected {
+        background: @teal;
+        color: #FFFFFF;
+      }
+    }
+
+    mat-radio-group {
+      > div {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+
+        mat-radio-button {
+          width: 100px;
+        }
+
+        .date-input {
+          width: 120px;
+        }
+
+        .number-occurences {
+          width: 160px;
+          padding-right: 80px;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          background: fade(@secondary-foreground, 20);
+          border-radius: 4px;
+          border: solid 1px transparent;
+
+          &:focus-within {
+            border-color: @teal;
+          }
+
+          input {
+            background: none;
+
+            &:focus {
+              border-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+<div class="header">
+  <div>Windsor Lodge Final Checkout: </div>
+  <div class="client">Glenn Turner</div>
+  <div class="balance">(Balance: $0.00)</div>
+  <div class="close" (click)="close()">
+    <i class="material-icons">close</i>
+  </div>
+</div>
+<rbs-anchor-navigator>
+  <img src="assets/client-logos/poronui.png" alt="poronui lodge" class="client-logo">
+  <div class="summary" [rbsAnchor]="{ url: 'summary', display: 'Summary' }">
+    <div class="section-title">Summary</div>
+    <div class="summary-details">
+      <div>
+        <div class="detail-title">GUEST NAME</div>
+        <div class="name">Turner, Glenn</div>
+        <div class="address">
+          4639 California Street<br />
+          San Francisco CA 94118
+        </div>
+      </div>
+      <div>
+        <div class="detail-title">RESERVATION DETAILS</div>
+        <div class="grid">
+          <div class="label">Reservation #:</div>
+          <div>10000059</div>
+          <div class="label">Room:</div>
+          <div>Master Lodge / Bunkhouse</div>
+          <div class="label">Arrival Date:</div>
+          <div>2/11/2020</div>
+          <div class="label">Departure Date:</div>
+          <div>2/11/2020</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="billing-details" [rbsAnchor]="{ url: 'billing-details', display: 'Billing Details' }">
+    <div class="section-title">Billing Details</div>
+    <table>
+      <thead>
+        <tr>
+          <th>DATE</th>
+          <th>REF NO</th>
+          <th>DESCRIPTION</th>
+          <th>CHARGES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detail of billingDetails">
+          <td>{{detail.date}}</td>
+          <td>{{detail.ref}}</td>
+          <td>{{detail.description}}</td>
+          <td>{{detail.charges | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="payment" [rbsAnchor]="{ url: 'payment', display: 'Payment' }">
+    <div class="section-title">Payment</div>
+    <div class="grid">
+      <div class="detail-title">APPR CODE</div>
+      <div class="detail-title">MERCHANGE ID</div>
+      <div>105465</div>
+      <div>2204144877</div>
+      <div class="detail-title">CARD NUMBER</div>
+      <div class="detail-title">EXP DATE</div>
+      <div>AX *5003</div>
+      <div>03/22</div>
+      <div class="detail-title">TRANSACTION ID</div>
+      <div class="detail-title">TRANS TYPE</div>
+      <div>1255920</div>
+      <div>Sale</div>
+    </div>
+  </div>
+  <div class="signature" [rbsAnchor]="{ url: 'signature', display: 'Signature' }">
+    <div class="section-title">Signature</div>
+    <img src="assets/dev/signature.png" alt="signature">
+  </div>
+  <div class="powered-by">
+    <img src="assets/poweredby.png" alt="powered by romeo bravo software">
+  </div>
+</rbs-anchor-navigator>
+<div class="footer">
+  <div class="buttons">
+    <button class="cancel">CANCEL</button>
+    <button class="tertiary">EMAIL</button>
+    <button class="secondary">PRINT</button>
+  </div>
+</div>

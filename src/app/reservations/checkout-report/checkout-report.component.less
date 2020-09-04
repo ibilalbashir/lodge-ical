@@ -1,0 +1,186 @@
+@import 'vars';
+
+:host {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  z-index: 101; // needs to be higher than the ng-table
+
+  .header {
+    flex: 0 0 58px;
+    background: @teal;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 0 18px;
+
+    > div {
+      margin-right: 14px;
+    }
+
+    .client {
+      color: @accent;
+    }
+
+    .close {
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+
+  .client-logo {
+    margin: 0 auto;
+    max-height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    color: @dark-teal;
+  }
+
+  ::ng-deep {
+
+    .content { // this is to account for the fixed footer at the bottom of the page with the buttons
+      margin-bottom: 48px;
+    }
+  }
+
+  .summary,
+  .billing-details,
+  .payment,
+  .signature {
+    padding: 20px 0;
+    border-bottom: solid 1px @ui-border;
+  }
+
+  .detail-title {
+    color: @teal;
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .summary {
+    .summary-details {
+      display: flex;
+      margin-top: 10px;
+
+      > div {
+        flex: 0 0 auto;
+        margin-right: 30px;
+      }
+
+      .detail-title {
+        margin: 6px 0;
+      }
+
+      .name {
+        margin-bottom: 6px;
+      }
+      .label,
+      .name {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .address {
+        font-size: 16px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 6px;
+        align-items: center;
+      }
+    }
+  }
+
+  .billing-details {
+    table {
+      width: 100%;
+      margin-top: 10px;
+      border-collapse: collapse;
+
+      th {
+        text-align: left;
+        background: @primary-foreground;
+        color: #FFFFFF;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 0 10px;
+        height: 19px;
+      }
+
+      tbody {
+        background: #FFFFFF;
+
+        tr {
+          height: 35px;
+          vertical-align: middle;
+
+          &:nth-child(even) {
+            background: @cream;
+          }
+  
+          td {
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .payment {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(100px, auto));
+      font-size: 16px;
+      margin-top: 10px;
+      row-gap: 4px;
+
+      .detail-title {
+        margin: 0;
+      }
+    }
+  }
+
+  .signature {  
+    border-bottom: none;  
+    img {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: #FFFFFF;
+    height: 48px;
+    left: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -6px 10px #ECE8DD;
+
+    .buttons {
+      width: 612px;
+      display: flex;
+
+      .cancel {
+        margin-right: auto;
+      }
+
+      .tertiary {
+        margin-right: 20px;
+      }
+    }
+  }
+}

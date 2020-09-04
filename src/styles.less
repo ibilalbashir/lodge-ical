@@ -1,0 +1,514 @@
+@import 'vars';
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timeline/main.css';
+@import '~@fullcalendar/resource-timeline/main.css';
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  line-height: 16px;
+  color: @primary-foreground;
+  font-size: 14px;
+  font-family: 'Nunito Sans', sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: @primary-foreground;
+}
+
+html {
+  --scrollbarBG: transparent;
+  --thumbBG: @secondary-foreground;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+a {
+  color: @link;
+}
+
+.flex-spacer {
+  flex: 1 1;
+}
+
+.form-wrapper {
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: wrap;
+
+  .field-wrapper {
+    flex: 1 1 50%;
+    padding: 10px;
+    min-width: 200px;
+  }
+}
+
+.field-wrapper {
+  label {
+    color: #333333;
+    font-size: 14px;
+    line-height: 16px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+  }
+
+  &.date {
+    .date-input {
+      width: 120px;
+    }
+  }
+
+  &.span-two {
+    flex: 1 1 100%;
+  }
+
+  &.double {
+    display: flex;
+
+    > .field-wrapper {
+      padding: 0;
+      min-width: 80px;
+
+      &:first-child {
+        padding-right: 20px;
+      }
+    }
+  }
+
+  mat-slide-toggle {
+    align-self: flex-end;
+  }
+}
+
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=date],
+.date-input {
+  background: #FFFFFF;
+  border: 1px solid #D4D4D4;
+  border-radius: 6px;
+  height: 36px;
+  padding: 0 10px;
+}
+
+select {
+  background: #FFFFFF;
+  border: 1px solid #D4D4D4;
+  border-radius: 6px;
+  height: 36px;
+  padding: 0 8px;
+}
+
+textarea {
+  border: 1px solid #D4D4D4;
+  border-radius: 6px;
+  padding: 0 8px;
+  resize: none;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  height: 35px;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 900;
+  border: solid 1px transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.icon {
+    height: 35px;
+    color: @teal;
+    border: solid 1px @teal;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    &:hover {
+      background: @secondary-light;
+    }
+
+    &:active {
+      background: @light-teal;
+      color: #FFFFFF;
+    }
+
+    i {
+      font-size: 18px;
+      margin-right: 6px;
+    }
+  }
+
+  &.primary {
+    background: #FFFFFF;
+    color: @teal;
+    border-color: @teal;
+
+    &:active {
+      background: @teal;
+      color: #FFFFFF;
+    }
+
+  }
+
+  &.secondary {
+    background: @teal;
+    color: #FFFFFF;
+
+    &:hover {
+      background: @light-teal;
+    }
+  }
+
+  &.tertiary {
+    background: @primary-foreground;
+    color: #FFFFFF;
+  }
+
+  &.cancel {
+    background: @dark-red;
+    color: #FFFFFF;
+
+    &:hover {
+      background: @red;
+    }
+  }
+
+  &:disabled {
+    background: @disabled-button-background !important;
+    border: none;
+    color: #FFFFFF;
+    cursor: default;
+  }
+
+  &.empty {
+    border: none;
+    background: none;
+    color: #FFFFFF
+  }
+}
+
+.section-title {
+  .section-title();
+}
+
+.section-subtitle {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.search-input {
+  height: 36px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: solid 1px @ui-border;
+  transition: all 230ms ease-in-out;
+  color: @primary-foreground;
+  position: relative;
+  overflow: hidden;
+
+  input {
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding-left: 40px;
+    border-radius: 0;
+
+    &:focus {
+      outline: none;
+      border-color: @teal;
+    }
+  }
+
+  &:focus-within {
+    border-color: @teal;
+  }
+
+  &:after {
+    content: '\e8b6';
+    font-family: Material Icons;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 24px;
+  }
+}
+
+.mat-table {
+  font-family: inherit;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  mat-radio-button {
+    margin-bottom: 10px;
+  }
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  mat-checkbox {
+    margin-bottom: 10px;
+  }
+}
+
+.mat-checkbox {
+  input {
+    visibility: hidden;
+  }
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: @header-background !important;
+}
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-ripple-element {
+  background: @teal !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: @teal;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: @teal;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background: @teal;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background: fade(@teal, 50);
+}
+
+.mat-slide-toggle.mat-accent .mat-ripple-element {
+  background: @teal !important;
+}
+
+.mat-slide-toggle.mat-checked .mat-ripple-element {
+  background: @teal !important;
+}
+
+.mat-select {
+  height: 36px;
+  border: 1px solid #D4D4D4;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  background: #FFFFFF;
+
+  .mat-select-trigger {
+    height: 100%;
+
+    .mat-select-value {
+      vertical-align: middle;
+    }
+  }
+
+  &.chromeless {
+    border: none;
+    background: none;
+  }
+}
+
+.mat-datepicker-wrapper {
+  position: relative;
+  border: solid 1px #D4D4D4;
+  border-radius: 6px;
+
+  input {
+    border: none;
+    background: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .mat-datepicker-toggle {
+    position: absolute;
+    right: 2px;
+    top: -1px;
+  }
+}
+.mat-form-field-infix {
+  border-top: 0;
+  padding: 0 0 -1px 0;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.mat-datepicker-toggle-default-icon {
+  color: @primary;
+}
+
+.mat-form-field-underline {
+  background: @primary;
+  bottom: 0;
+
+  .mat-form-field-ripple {
+    background-color: @primary !important;
+  }
+}
+
+.mat-form-field-label-wrapper {
+  font-size: 10px;
+  color: @mid-grey;
+}
+
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.28125em) scale(1) perspective(100px) translateZ(0.001px) !important;
+  color: @primary !important;
+}
+
+.powered-by {
+  display: flex;
+
+  img {
+    width: 142px;
+  }
+}
+
+.fc-license-message {
+  display: none !important;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background: @ui-border;
+  grid-column: span 2;
+}
+
+// perfect scrollbar overrides
+.ps {
+  position: relative;
+
+  // scrollbar looks better with default coloring
+  // change it here if we decide to go with something within the color theme
+  // .ps__thumb-y,
+  // .ps__thumb-x {
+  //   background: @engineering;
+
+  //   &:hover {
+  //     background: @engineering-dark;
+  //   }
+  // }
+
+  // .ps__rail-x,
+  // .ps__rail-y {
+  //   background: transparent !important;
+
+  //   &.ps--clicking {
+  //     .ps__thumb-y,
+  //     .ps__thumb-x {
+  //       background: @engineering-dark;
+  //     }
+  //   }
+  // }
+}

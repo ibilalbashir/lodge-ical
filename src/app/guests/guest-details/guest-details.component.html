@@ -1,0 +1,75 @@
+<div class="page-header">
+  <i class="material-icons" routerLink="/guests">arrow_back_ios</i>
+  <div class="name">Rose Andrews</div>
+</div>
+<div class="content">
+  <div class="contact-information">
+    <div class="scrollable">
+      <rbs-collapse-section [sectionTitle]="'Contact Information'" [showContent]="true">
+        <div class="form-wrapper">
+          <div class="field-wrapper">
+            <label for="phone_number">Phone Number</label>
+            <input id="phone_number" type="text">
+          </div>
+          <div class="field-wrapper">
+            <label for="phone_number">Phone Label/Type</label>
+            <mat-select id="phone_type">
+              <mat-option value="mobile">Mobile</mat-option>
+            </mat-select>
+          </div>
+          <div class="field-wrapper">
+            <label for="first_name">First Name</label>
+            <input id="first_name" type="text">
+          </div>
+          <div class="field-wrapper">
+            <label for="last_name">Last Name</label>
+            <input id="last_name" type="text">
+          </div>
+          <div class="field-wrapper span-two">
+            <label for="email">Email</label>
+            <input id="email" type="email">
+          </div>
+          <div class="field-wrapper span-two">
+            <label for="address">Address</label>
+            <input id="address" type="text">
+          </div>
+          <div class="field-wrapper">
+            <label for="city">City</label>
+            <input id="city" type="text">
+          </div>
+          <div class="field-wrapper double">
+            <div class="field-wrapper">
+              <label for="state">State</label>
+              <mat-select id="state">
+                <mat-option value="AL">AL</mat-option>
+              </mat-select>
+            </div>
+            <div class="field-wrapper">
+              <label for="city">City</label>
+              <input id="city" type="text">
+            </div>
+          </div>
+        </div>
+      </rbs-collapse-section>
+      <rbs-collapse-section [sectionTitle]="'Visits'"></rbs-collapse-section>
+      <rbs-collapse-section [sectionTitle]="'Relationships'"></rbs-collapse-section>
+      <rbs-collapse-section [sectionTitle]="'Member Information'"></rbs-collapse-section>
+      <rbs-collapse-section [sectionTitle]="'Personal Data'"></rbs-collapse-section>
+    </div>
+    <div class="footer">
+      <button class="cancel">CANCEL</button>
+      <button class="primary">SAVE</button>
+    </div>
+  </div>
+  <div class="correspondence">
+    <rbs-correspondence-card correspondenceTitle="Email sent" correspondenceType="email"></rbs-correspondence-card>
+    <rbs-correspondence-card correspondenceTitle="Preconfirmation" correspondenceType="confirmation">
+    </rbs-correspondence-card>
+    <rbs-correspondence-card correspondenceTitle="Email received" correspondenceType="email"></rbs-correspondence-card>
+  </div>
+</div>
+<div class="footer">
+  <div class="powered-by">
+    <img src="assets/poweredby.png" alt="powered by romeo bravo software">
+  </div>
+</div>

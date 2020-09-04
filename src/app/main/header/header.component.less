@@ -1,0 +1,75 @@
+@import 'vars';
+
+:host {
+  display: flex;
+  background: @header-background;
+  color: #FFFFFF;
+  flex: 0 0 66px;
+  align-items: center;
+
+  .icon-wrapper {
+    width: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item {
+    padding: 0 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    align-self: stretch;
+
+    &.active {
+      background: @teal;
+      color: #FFFFFF;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    > div {
+      position: relative;
+      
+      .notification {
+        width: 14px;
+        height: 14px;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 14px;
+        background: @red;
+        position: absolute;
+        top: -10px;
+        right: -12px;
+        font-size: 9px;
+        font-weight: bold;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .spacer {
+    flex: 1 1;
+  }
+
+  .button.icon {
+    background: @salmon;
+    color: #FFFFFF;
+    border: none;
+    height: 36px;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 30px;
+    cursor: pointer;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+}

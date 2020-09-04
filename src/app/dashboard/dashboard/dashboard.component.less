@@ -1,0 +1,71 @@
+@import 'vars';
+
+:host {
+  .route-host();
+  display: flex;
+
+  > div {
+    flex: 1 1;
+    border-right: solid 1px fade(@ui-border, 50);
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    .header {
+      .page-header();
+    }
+
+    .content {
+      flex: 1 1;
+      overflow: auto;
+      padding: 20px 0;
+    }
+  }
+
+  .todo {
+    position: relative;
+
+    .todo-filters {
+      display: flex;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 0 24px;
+  
+      .date {
+        margin-right: auto;
+      }
+    }
+
+    rbs-add-reminder {
+      position: absolute;
+      top: 70px;
+      left: 10px;
+    }
+  }
+
+  .account-balance {  
+
+    .flex {
+      display: flex;
+      margin-bottom: 12px;
+    }  
+
+    .search-input {
+      flex: 1 1;
+      margin-right: 16px;
+      margin-left: 20px;
+    }
+
+    button {
+      margin-right: 20px;
+    }
+
+    .section-subtitle {
+      padding-left: 20px;
+    }
+    
+  }
+}

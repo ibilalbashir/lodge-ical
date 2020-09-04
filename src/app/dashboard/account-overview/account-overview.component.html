@@ -1,0 +1,27 @@
+<div>
+  <div class="name">{{data.name}}</div>
+  <div class="details">{{data.bookingDetails}}</div>
+  <div class="value-label">TOTAL DUE</div>
+  <div class="value">{{data.balanceDue | currency}}</div>
+  <button class="primary" *ngIf="!showContactPanel" (click)="showContactPanel = true">CONTACT</button>
+  <div class="contact-panel" *ngIf="showContactPanel">
+    <div class="contact-options">
+      <div class="phone" (click)="selectContactMethod('phone')" [class.active]="selectedContactMethod === 'phone'"><i
+          class="material-icons">phone</i></div>
+      <div class="text" (click)="selectContactMethod('message')" [class.active]="selectedContactMethod === 'message'">
+        <i class="material-icons">chat_bubble</i></div>
+      <div class="email" (click)="selectContactMethod('email')" [class.active]="selectedContactMethod === 'email'"><i
+          class="material-icons">email</i></div>
+    </div>
+    <div class="message">
+      <div class="header">Sending to <span>1-252-285-1254</span></div>
+      <div class="text-wrapper">
+        <textarea rows="6"></textarea>
+        <div class="footer">
+          <button class="primary">SEND</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div></div>

@@ -1,0 +1,325 @@
+<rbs-wizard wizardTitle="Reservation Confirmation" [selectedStepIndex]="selectedWizardStep">
+  <rbs-wizard-step stepTitle="Verify Information">
+    <div class="verify-information">
+      <div class="content">
+        <div class="grid">
+          <div class="field-wrapper">
+            <label for="">Phone Number</label>
+            <input type="text">
+          </div>
+          <div class="field-wrapper">
+            <label for="">Phone Label/Type</label>
+            <mat-select>
+              <mat-option value="mobile">Mobile</mat-option>
+            </mat-select>
+          </div>
+          <div class="field-wrapper">
+            <label for="">First Name</label>
+            <input type="text">
+          </div>
+          <div class="field-wrapper">
+            <label for="">Last Name</label>
+            <input type="text">
+          </div>
+          <div class="email">
+            <div class="field-wrapper">
+              <label for="">Email</label>
+              <input type="email">
+            </div>
+            <div class="guest-details">
+              <a [routerLink]="['/guests', guestInfo.id]">Guest Details</a>
+            </div>
+          </div>
+          <div class="section-title">Guests</div>
+          <div class="section-title">Dates</div>
+          <div class="double-field">
+            <div class="field-wrapper">
+              <label for="">Adults</label>
+              <mat-select>
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+              </mat-select>
+            </div>
+            <div class="field-wrapper">
+              <label for="">Children (&lt;16 y/o)</label>
+              <mat-select>
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="double-field">
+            <div class="field-wrapper">
+              <label for="">From</label>
+              <input type="text" disabled>
+            </div>
+            <div class="field-wrapper">
+              <label for="">To</label>
+              <input type="text" disabled>
+            </div>
+          </div>
+          <div class="separator"></div>
+          <div class="field-wrapper">
+            <label for="">Items</label>
+            <mat-select>
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+            </mat-select>
+          </div>
+          <div class="field-wrapper">
+            <label for="">Estimated Price</label>
+            <input type="number">
+          </div>
+          <table class="resources">
+            <tr *ngFor="let resource of reservedResources">
+              <td class="name">{{resource.name}}</td>
+              <td class="description">{{resource.description}}</td>
+              <td class="additionalDetails">{{resource.additionalDetails}}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="rates-info">
+          <div class="title">Rates for this reservation include: </div>
+          <div *ngFor="let rate of includedRates">- {{rate}}</div>
+        </div>
+        <div class="actions">
+          <button class="cancel" routerLink="/reservations" (click)="cancel()">CANCEL</button>
+          <button class="secondary" (click)="next()">CONFIRM RESERVATION</button>
+        </div>
+      </div>
+    </div>
+  </rbs-wizard-step>
+  <rbs-wizard-step stepTitle="Payment Options">
+    <div class="payment-options">
+      <mat-checkbox>Tax Exempt</mat-checkbox>
+      <div class="content">
+        <div class="splits-selection-wrapper">
+          <div class="splits-selection">
+            <div class="field-wrapper">
+              <label for="splits">Splits</label>
+              <mat-select [(value)]="numberOfSplits">
+                <mat-option [value]="3">3</mat-option>
+              </mat-select>
+            </div>
+            <div class="field-wrapper">
+              <label for="splits">Split Unit</label>
+              <mat-select>
+                <mat-option [value]="'month'">Month</mat-option>
+              </mat-select>
+            </div>
+            <div class="total-due">
+              <div class="label">TOTAL DUE (INCLUDING TAX)</div>
+              <div>$8,340.99</div>
+            </div>
+          </div>
+        </div>
+        <div class="splits-list">
+          <div class="split" *ngFor="let split of splits; let i = index">
+            <div class="section-title">
+              Split {{i + 1}}
+              <span class="date">Due: 02/28/2020</span>
+            </div>
+            <div class="inputs">
+              <div class="field-wrapper">
+                <label for="amount">Amount</label>
+                <input type="text" id="amount">
+              </div>
+              <div class="field-wrapper">
+                <label for="splits">Category</label>
+                <mat-select>
+                  <mat-option [value]="'deposit'">Deposit</mat-option>
+                </mat-select>
+              </div>
+              <div class="field-wrapper">
+                <label for="splits">Method</label>
+                <mat-select>
+                  <mat-option [value]="'credit-card'">Credit Card</mat-option>
+                  <mat-option [value]="'ach'">ACH</mat-option>
+                </mat-select>
+              </div>
+              <div class="field-wrapper">
+                <label for="notes">Notes</label>
+                <input type="text" id="notes" placeholder="Enter comments">
+              </div>
+              <div class="state">Pending</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="cancel" (click)="cancel()">CANCEL</button>
+            <button class="secondary" (click)="next()">CONFIRM SPLITS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </rbs-wizard-step>
+  <rbs-wizard-step stepTitle="Summary">
+    <div class="summary">
+      <div class="content">
+        <div class="grid">
+          <div class="field-wrapper">
+            <label for="">Phone Number</label>
+            <input type="text">
+          </div>
+          <div class="field-wrapper">
+            <label for="">Phone Label/Type</label>
+            <mat-select>
+              <mat-option value="mobile">Mobile</mat-option>
+            </mat-select>
+          </div>
+          <div class="field-wrapper">
+            <label for="">First Name</label>
+            <input type="text">
+          </div>
+          <div class="field-wrapper">
+            <label for="">Last Name</label>
+            <input type="text">
+          </div>
+          <div class="email">
+            <div class="field-wrapper">
+              <label for="">Email</label>
+              <input type="email">
+            </div>
+          </div>
+          <div class="section-title">Guests</div>
+          <div class="section-title">Dates</div>
+          <div class="double-field">
+            <div class="field-wrapper">
+              <label for="">Adults</label>
+              <mat-select>
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+              </mat-select>
+            </div>
+            <div class="field-wrapper">
+              <label for="">Children (&lt;16 y/o)</label>
+              <mat-select>
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="double-field">
+            <div class="field-wrapper">
+              <label for="">From</label>
+              <input type="text" disabled>
+            </div>
+            <div class="field-wrapper">
+              <label for="">To</label>
+              <input type="text" disabled>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div class="section-title">Payment & Account Balance</div>
+        <div class="payment-balance">
+          <div class="flex">
+            <div class="package">
+              <div class="title">Reservation package:</div>
+              <div *ngFor="let rate of includedRates">- {{rate}}</div>
+            </div>
+            <div class="financials">
+              <div class="grid">
+                <div class="label">NET</div>
+                <div>{{net | currency}}</div>
+                <div class="label">TAX</div>
+                <div>{{tax | currency}}</div>
+                <div class="label">REQUIRED SERVICE CHARGE/GRATUITY</div>
+                <div>{{serviceCharge | currency}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="separator"></div>
+          <div class="flex">
+            <div class="splits">
+              <div class="field-wrapper">
+                <label for="splits">Splits</label>
+                <mat-select [(value)]="numberOfSplits">
+                  <mat-option [value]="3">3</mat-option>
+                </mat-select>
+              </div>
+              <div class="field-wrapper">
+                <label for="splits">Split Unit</label>
+                <mat-select>
+                  <mat-option [value]="'month'">Month</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="total-due">
+              <div class="label">TOTAL DUE (INCLUDING TAX)</div>
+              <div>$8,340.99</div>
+            </div>
+          </div>
+          <div class="splits-table">
+            <table>
+              <tr *ngFor="let split of splitsSummary; let i = index">
+                <td>
+                  <div class="status" [ngClass]="split.status"></div>
+                </td>
+                <td class="split">Split {{i + 1}}</td>
+                <td>{{split.type}}</td>
+                <td>{{split.paymentMethod}}</td>
+                <td>{{split.paymentDate}}</td>
+                <td class="amount">{{split.paymentAmount | currency}}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="flex">
+            <mat-checkbox>Tax Exempt</mat-checkbox>
+            <div class="total-pending">
+              <div>TOTAL PENDING</div>
+              <div class="value">{{totalPending | currency}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid customer-preferences">
+          <div class="section-title large">Customer Preferences</div>
+          <div class="section-title">Meal Preferences</div>
+          <div class="field-wrapper">
+            <label for="arrivalMeal">Arrival Meal</label>
+            <mat-select></mat-select>
+          </div>
+          <div class="field-wrapper">
+            <label for="departureMeal">Departure Meal</label>
+            <mat-select></mat-select>
+          </div>
+          <div class="section-title">Check in and out</div>
+          <div class="field-wrapper">
+            <label for="checkIn">Check in time</label>
+            <input type="text">
+          </div>
+          <div class="field-wrapper">
+            <label for="checkOut">Check out time</label>
+            <input type="text">
+          </div>
+        </div>
+        <br><br>
+        <div class="section-title">A la carte activities</div>
+        <div class="activities">
+          <mat-checkbox>Activity Title</mat-checkbox>
+          <div class="price">$450.00<br>/ Guest</div>
+          <div class="description">
+            <div class="title">Activity Description</div>
+            <div>Quisque at justo nec orci tempus faucibus ac id ipsum. Pellentesque ex urna, eleifend vitae est et,
+              ornare porttitor lorem. Aenean convallis rhoncus enim, in dignissim massa posuere ac. Mauris ac massa eget
+              tellus bibendum ornare at ac elit. In sodales et mauris ac molestie. Praesent sed orci eu mi venenatis
+              pharetra. In hac habitasse platea dictumst. Curabitur vestibulum fringilla nisi quis sodales. Nullam quis
+              rutrum urna.</div>
+          </div>
+          <div class="selection">
+            <div class="field-wrapper">
+              <label for="guests">Guests</label>
+              <mat-select></mat-select>
+            </div>
+            <div class="field-wrapper">
+              <input type="text">
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="cancel" (click)="cancel()">CANCEL</button>
+          <button class="secondary" (click)="next()">FINISH</button>
+        </div>
+      </div>
+    </div>
+  </rbs-wizard-step>
+</rbs-wizard>

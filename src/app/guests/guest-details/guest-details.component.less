@@ -1,0 +1,87 @@
+@import 'vars';
+
+:host {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  background-color: @cream;
+  overflow: hidden;
+
+  .page-header {
+    i {
+      cursor: pointer;
+      &:focus {
+        outline: none
+      }
+    }
+    .name {
+      .section-title();
+    }
+  }
+
+  > .content {
+    flex: 1 1;
+    display: flex;
+    padding: 30px 10px 30px 30px;
+    overflow: hidden;
+
+    > div {
+      flex: 1 1 50%;
+    }
+
+    .contact-information {
+      box-shadow: @tile-shadow;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      > .scrollable {
+        flex: 1 1;
+        overflow: auto;
+        overflow-x: hidden;
+        padding: 20px;
+
+        .form-wrapper {
+          margin: 10px -10px;
+        }
+
+        .section-title {
+          cursor: pointer;
+        }
+        
+        rbs-collapse-section {
+          margin-bottom: 10px;
+        }
+      }
+
+      .footer {
+        flex: 0 0 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        
+        .primary {
+          margin-left: auto;
+        }
+      }
+    }
+
+    .correspondence {
+      padding: 0 20px;
+      overflow: auto;
+
+      rbs-correspondence-card {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  > .footer {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+}

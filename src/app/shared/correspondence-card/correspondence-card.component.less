@@ -1,0 +1,50 @@
+@import 'vars';
+
+:host {
+    background: #FFFFFF;
+    box-shadow: @tile-shadow;
+    border-radius: 4px;
+    display: block;
+    padding: 20px;
+
+    .section-title {
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-right: 6px;
+      }
+
+      .date {
+        margin-left: auto;
+        color: @secondary-foreground;
+        font-weight: normal;
+        font-size: 13px;
+      }
+    }
+
+    .description {
+      color: @description-foreground;
+      padding: 10px 0;
+      font-weight: bold;
+
+      .title {
+        font-weight: 900;
+      }
+    }
+
+    .actions  {
+      display: flex;
+      align-items: center;
+
+      mat-slide-toggle {
+        align-self: flex-end;
+        margin-bottom: 8px;
+      }
+
+      .field-wrapper {
+        flex: 1 1;
+        padding: 0 10px;
+      }
+    }
+}

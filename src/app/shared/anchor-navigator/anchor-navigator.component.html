@@ -1,0 +1,8 @@
+<nav>
+  <a *ngFor="let anchor of anchorLinks" routerLink="/reservations" [fragment]="anchor.url">{{anchor.display}}</a>
+</nav>
+<div class="content" #scroller>
+  <div class="centered">
+    <ng-content></ng-content>
+  </div>
+</div>
