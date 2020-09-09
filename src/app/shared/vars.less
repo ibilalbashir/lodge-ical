@@ -102,78 +102,80 @@
       height: 100%;
     }
 
-    table {
-      width: 100%;
+    
+  }
+}
+.std-table{
+  
+    width: 100%;
 
-      tr {
-        &.mat-header-row {
-          font-size: 10px;
-          height: 50px;
-
-          th {
-            background: #F9F7F1;
-            border-bottom-color: @ui-border;
-          }
-        }
-
-        &:nth-child(even) {
-          background: #F9F7F1;
-        }
-      }
-
-      .mat-cell {
-        border-bottom-color: @ui-border;
-      }
-
-      .status {
-        display: inline-block;
-        width: 65px;
+    tr {
+      &.mat-header-row {
         font-size: 10px;
-        font-weight: bold;
-        line-height: 18px;
-        height: 18px;
-        text-align: center;
-        border-radius: 10px;
-        background: @teal;
-        color: #FFFFFF;
-        text-transform: capitalize;
+        height: 50px;
 
-        &.hold {
-          background: @yellow;
-        }
-
-        &.quote {
-          background: @dark-teal;
-        }
-
-        &.inquiry {
-          border: solid 1px #A7A7A7;
-          background: @inquiry;
-          color: #1F3143;
-        }
-
-        &.cancelled {
-          background: @dark-red;
+        th {
+          background: #F9F7F1;
+          border-bottom-color: @ui-border;
         }
       }
 
-      .name {
-        .section-title();
+      &:nth-child(even) {
+        background: #F9F7F1;
+      }
+    }
 
-        &:hover {
-          color: @teal;
-          text-decoration: underline;
-          cursor: pointer;
-        }
+    .mat-cell {
+      border-bottom-color: @ui-border;
+    }
 
-        > span {          
-          &:active {
-            outline: none;
-          }
+    .status {
+      display: inline-block;
+      width: 65px;
+      font-size: 10px;
+      font-weight: bold;
+      line-height: 18px;
+      height: 18px;
+      text-align: center;
+      border-radius: 10px;
+      background: @teal;
+      color: #FFFFFF;
+      text-transform: capitalize;
+
+      &.hold {
+        background: @yellow;
+      }
+
+      &.quote {
+        background: @dark-teal;
+      }
+
+      &.inquiry {
+        border: solid 1px #A7A7A7;
+        background: @inquiry;
+        color: #1F3143;
+      }
+
+      &.cancelled {
+        background: @dark-red;
+      }
+    }
+
+    .name {
+      .section-title();
+
+      &:hover {
+        color: @teal;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      > span {          
+        &:active {
+          outline: none;
         }
       }
     }
-  }
 }
 
 .side-nav-host {

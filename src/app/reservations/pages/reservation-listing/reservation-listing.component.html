@@ -1,0 +1,22 @@
+<rbs-reservation-sidebar></rbs-reservation-sidebar>
+<div class="grid-content">
+  <div class="page-header">
+    <div class="section-title">Reservations</div>
+    <div class="search-input">
+      <input type="text" placeholder="Enter guest name ...">
+    </div>
+    <div class="flex-spacer"></div>
+    <button class="icon">
+      <i class="material-icons">add_box</i>
+      ADD GUEST
+    </button>
+    <button class="icon" (click)="showCheckoutReport()">ACTIONS</button>
+  </div>
+  <div class="content">
+    <div class="grid-scroll-wrapper">
+      <rbs-reservation-table></rbs-reservation-table>
+    </div>
+  </div>
+</div>
+
+<rbs-checkout-report *ngIf="checkoutReportVisible" (onClose)="hideCheckoutReport()"></rbs-checkout-report>

@@ -1,0 +1,23 @@
+<div class="smart-filter">
+    <div class="page-header">
+      <div class="section-title">Smart Filter</div>
+    </div>
+    <div class="filter-content">
+      <div class="section">
+        <div class="section-subtitle">VISIT DATE</div>
+        <mat-radio-group [(ngModel)]="visitDate" class="radio-group">
+          <mat-radio-button value="present">Present</mat-radio-button>
+          <mat-radio-button value="future">Future</mat-radio-button>
+          <mat-radio-button value="past">Past</mat-radio-button>
+          <mat-radio-button value="custom">Custom date range</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="section">
+        <div class="section-subtitle">STATUS</div>
+        <div class="checkbox-group">
+          <mat-checkbox>All Guests</mat-checkbox>
+          <mat-checkbox>Inquiry</mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>

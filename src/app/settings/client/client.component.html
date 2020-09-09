@@ -1,0 +1,182 @@
+<div class="container-fluid">
+        <mat-card >
+
+            <mat-card-header>
+
+                <mat-card-title>Business Setup</mat-card-title>
+
+            </mat-card-header>
+            <form [formGroup]='testForm'>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-label>Business Name</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="businessName">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['businessName'].invalid && (testForm.controls['businessName'].dirty || testForm.controls['businessName'].touched)">
+                            <div *ngIf="testForm.controls['businessName'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Business Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <mat-label class="my-mat-label">Business Address 1</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="businessAddress1">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['businessAddress1'].invalid && (testForm.controls['businessAddress1'].dirty || testForm.controls['businessAddress1'].touched)">
+                            <div *ngIf="testForm.controls['businessAddress1'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Business Address 1 is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <mat-label class="my-mat-label">Business Address 4</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="businessAddress4">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['businessAddress4'].invalid && (testForm.controls['businessAddress4'].dirty || testForm.controls['businessAddress4'].touched)">
+                            <div *ngIf="testForm.controls['businessAddress4'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Business Address 4 is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">City</mat-label>
+                        <mat-form-field appearance="none" class="w-100">
+                            <mat-select>
+                                <mat-option value="option">Option 1</mat-option>
+                                <mat-option value="option">Option 2</mat-option>
+                                <mat-option value="option">Option 3</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['city'].invalid && (testForm.controls['city'].dirty || testForm.controls['city'].touched)">
+                            <div *ngIf="testForm.controls['city'].errors.required" style="color: red;" class="my-2">
+                                City is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">State</mat-label>
+                        <mat-form-field appearance="none" class="w-100">
+                            <mat-select>
+                                <mat-option value="option">Option 1</mat-option>
+                                <mat-option value="option">Option 2</mat-option>
+                                <mat-option value="option">Option 3</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['state'].invalid && (testForm.controls['state'].dirty || testForm.controls['state'].touched)">
+                            <div *ngIf="testForm.controls['state'].errors.required" style="color: red;" class="my-2">
+                                *State is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">ZIP</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="zip">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['zip'].invalid && (testForm.controls['zip'].dirty || testForm.controls['zip'].touched)">
+                            <div *ngIf="testForm.controls['zip'].errors.required" style="color: red;" class="my-2">
+                                *ZIP is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">Business Phone 1</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="businessPhone1">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['businessPhone1'].invalid && (testForm.controls['businessPhone1'].dirty || testForm.controls['businessPhone1'].touched)">
+                            <div *ngIf="testForm.controls['businessPhone1'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Business Phone 1 is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">Business Phone 2</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="businessPhone2">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['businessPhone2'].invalid && (testForm.controls['businessPhone2'].dirty || testForm.controls['businessPhone2'].touched)">
+                            <div *ngIf="testForm.controls['businessPhone2'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Business Phone 2 is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">Business Email</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="businessEmail">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['businessEmail'].invalid && (testForm.controls['businessEmail'].dirty || testForm.controls['businessEmail'].touched)">
+                            <div *ngIf="testForm.controls['businessEmail'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Business Email is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <mat-label class="my-mat-label">Business Website</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="businessWebsite">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['businessWebsite'].invalid && (testForm.controls['businessWebsite'].dirty || testForm.controls['businessWebsite'].touched)">
+                            <div *ngIf="testForm.controls['businessWebsite'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Business Website is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <mat-label class="my-mat-label">Outfitter Name</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="outfitterName">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['outfitterName'].invalid && (testForm.controls['outfitterName'].dirty || testForm.controls['outfitterName'].touched)">
+                            <div *ngIf="testForm.controls['outfitterName'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Outfitter Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <mat-label class="my-mat-label">Outfitter License Number</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="outfitterLicenseNumber">
+                        </mat-form-field>
+                        <div
+                            *ngIf="testForm.controls['outfitterLicenseNumber'].invalid && (testForm.controls['outfitterLicenseNumber'].dirty || testForm.controls['outfitterLicenseNumber'].touched)">
+                            <div *ngIf="testForm.controls['outfitterLicenseNumber'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Outfitter Number is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mt-5">
+                      <button mat-raised-button color="primary">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </mat-card>
+    </div>
+

@@ -2,38 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
-  selector: 'rbs-reservations',
-  templateUrl: './reservations.component.html',
-  styleUrls: ['./reservations.component.less']
+  selector: 'rbs-reservation-table',
+  templateUrl: './reservation-table.component.html',
+  styleUrls: ['./reservation-table.component.less']
 })
-export class ReservationsComponent implements OnInit {
-
-  // TODO: change to proper reservation model
+export class ReservationTableComponent implements OnInit {
+// TODO: change to proper reservation model
   public selection: SelectionModel<any>;
   public reservations: any[];
   public displayedColumns: string[] = ['select', 'status', 'name', 'bookingDetails', 'location', 'contactNumber'];
-  public visitDate: string;
-  public checkoutReportVisible = false;
-
-  constructor() {
+  
+  constructor() { 
     const initialSelection = [];
     const allowMultiSelect = true;
-    this.selection = new SelectionModel<any>(allowMultiSelect, initialSelection);
-
     this.devBootstrap();
+    this.selection = new SelectionModel<any>(allowMultiSelect, initialSelection);
   }
 
-  ngOnInit(): void { }
-
-  //dev
-  public showCheckoutReport(): void {
-    this.checkoutReportVisible = true;
+  ngOnInit(): void {
   }
-
-  public hideCheckoutReport(): void {
-    this.checkoutReportVisible = false;
-  }
-
+  
   /** Whether the number of selected elements matches the total number of rows. */
   public isAllSelected(): boolean {
     const numSelected = this.selection.selected.length;
@@ -47,7 +35,6 @@ export class ReservationsComponent implements OnInit {
       this.selection.clear() :
       this.reservations.forEach(row => this.selection.select(row));
   }
-
   private devBootstrap() {
     this.reservations = [
       { name: 'Rose Andrews', bookingDetails: '6 guests - 4 Days - Main Lodge', location: 'Haskell, Illinois', contactNumber: '(987) 456-8765', status: 'confirmed' },
@@ -71,4 +58,5 @@ export class ReservationsComponent implements OnInit {
       { name: 'Rose Andrews', bookingDetails: '6 guests - 4 Days - Main Lodge', location: 'Haskell, Illinois', contactNumber: '(987) 456-8765', status: 'confirmed' }
     ]
   }
+
 }

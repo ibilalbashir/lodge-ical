@@ -220,11 +220,11 @@
             <div class="financials">
               <div class="grid">
                 <div class="label">NET</div>
-                <div>{{net | currency}}</div>
+                <div>{{net }}</div>
                 <div class="label">TAX</div>
-                <div>{{tax | currency}}</div>
+                <div>{{tax }}</div>
                 <div class="label">REQUIRED SERVICE CHARGE/GRATUITY</div>
-                <div>{{serviceCharge | currency}}</div>
+                <div>{{serviceCharge }}</div>
               </div>
             </div>
           </div>
@@ -253,13 +253,13 @@
             <table>
               <tr *ngFor="let split of splitsSummary; let i = index">
                 <td>
-                  <div class="status" [ngClass]="split.status"></div>
+                  <div class="status"></div>
                 </td>
                 <td class="split">Split {{i + 1}}</td>
                 <td>{{split.type}}</td>
                 <td>{{split.paymentMethod}}</td>
                 <td>{{split.paymentDate}}</td>
-                <td class="amount">{{split.paymentAmount | currency}}</td>
+                <td class="amount">{{split.paymentAmount }}</td>
               </tr>
             </table>
           </div>
@@ -267,7 +267,7 @@
             <mat-checkbox>Tax Exempt</mat-checkbox>
             <div class="total-pending">
               <div>TOTAL PENDING</div>
-              <div class="value">{{totalPending | currency}}</div>
+              <div class="value">{{totalPending }}</div>
             </div>
           </div>
         </div>

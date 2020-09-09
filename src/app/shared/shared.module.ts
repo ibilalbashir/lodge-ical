@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
@@ -18,6 +17,9 @@ import { CollapseSectionComponent } from './collapse-section/collapse-section.co
 import { CorrespondenceCardComponent } from './correspondence-card/correspondence-card.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { WizardStepComponent } from './wizard-step/wizard-step.component';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,6 @@ import { WizardStepComponent } from './wizard-step/wizard-step.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    BrowserAnimationsModule,
     MatTableModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -41,12 +42,17 @@ import { WizardStepComponent } from './wizard-step/wizard-step.component';
     MatNativeDateModule,
     MatSlideToggleModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatIconModule,
   ],
   exports: [
     RouterModule,
-    BrowserAnimationsModule,
     FormsModule,
+    CommonModule,
     MatTableModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -61,7 +67,13 @@ import { WizardStepComponent } from './wizard-step/wizard-step.component';
     CollapseSectionComponent,
     CorrespondenceCardComponent,
     WizardComponent,
-    WizardStepComponent
+    WizardStepComponent,
+    MatChipsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatIconModule,
+    
   ]
 })
 export class SharedModule { }

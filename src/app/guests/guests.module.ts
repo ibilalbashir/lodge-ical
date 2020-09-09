@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GuestsComponent } from './guests/guests.component';
 import { SharedModule } from '../shared/shared.module';
-import { GuestDetailsComponent } from './guest-details/guest-details.component';
+import { GuestRoutingModule } from './guest-routing.module';
+import { GuestDetailsComponent } from './pages/guest-details/guest-details.component';
+import { GuestsComponent } from './pages/guests/guests.component';
 
 
 
@@ -13,7 +14,8 @@ import { GuestDetailsComponent } from './guest-details/guest-details.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    GuestRoutingModule,
   ],
   exports: [
     GuestsComponent,

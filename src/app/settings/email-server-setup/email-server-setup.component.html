@@ -1,0 +1,135 @@
+<div class="container-fluid">
+
+        <mat-card >
+            <mat-card-header>
+                <mat-card-title><span style="color: red;">Email Server Setup</span></mat-card-title>
+            </mat-card-header>
+
+            <form [formGroup]='emailServersetupForm'>
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">Server</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="server">
+                        </mat-form-field>
+                        <div
+                            *ngIf="emailServersetupForm.controls['server'].invalid && (emailServersetupForm.controls['server'].dirty || emailServersetupForm.controls['server'].touched)">
+                            <div *ngIf="emailServersetupForm.controls['server'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Server Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">Port</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="port">
+                        </mat-form-field>
+                        <div
+                            *ngIf="emailServersetupForm.controls['port'].invalid && (emailServersetupForm.controls['port'].dirty || emailServersetupForm.controls['port'].touched)">
+                            <div *ngIf="emailServersetupForm.controls['port'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Port Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">Time Out</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="timeOut">
+                        </mat-form-field>
+                        <div
+                            *ngIf="emailServersetupForm.controls['timeOut'].invalid && (emailServersetupForm.controls['timeOut'].dirty || emailServersetupForm.controls['timeOut'].touched)">
+                            <div *ngIf="emailServersetupForm.controls['timeOut'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Time Out Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">User ID</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="userID">
+                        </mat-form-field>
+                        <div
+                            *ngIf="emailServersetupForm.controls['userID'].invalid && (emailServersetupForm.controls['userID'].dirty || emailServersetupForm.controls['userID'].touched)">
+                            <div *ngIf="emailServersetupForm.controls['userID'].errors.required" style="color: red;"
+                                class="my-2">
+                                *User ID Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">From</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="from">
+                        </mat-form-field>
+                        <div
+                            *ngIf="emailServersetupForm.controls['from'].invalid && (emailServersetupForm.controls['from'].dirty || emailServersetupForm.controls['from'].touched)">
+                            <div *ngIf="emailServersetupForm.controls['from'].errors.required" style="color: red;"
+                                class="my-2">
+                                *From ID Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">Hash</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="hash">
+                        </mat-form-field>
+                        <div
+                            *ngIf="emailServersetupForm.controls['hash'].invalid && (emailServersetupForm.controls['hash'].dirty || emailServersetupForm.controls['hash'].touched)">
+                            <div *ngIf="emailServersetupForm.controls['hash'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Hash ID Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <mat-label class="my-mat-label">Test To</mat-label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput formControlName="testTo">
+                        </mat-form-field>
+                        <div
+                            *ngIf="emailServersetupForm.controls['testTo'].invalid && (emailServersetupForm.controls['testTo'].dirty || emailServersetupForm.controls['testTo'].touched)">
+                            <div *ngIf="emailServersetupForm.controls['testTo'].errors.required" style="color: red;"
+                                class="my-2">
+                                *Test To Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 col-md-8">
+                        <span> Test Mode <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                    </div>
+
+
+
+                    <div class="col-3">
+                        <span> Test Mode <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                    </div>
+
+                    <div class="col-3">
+                        <span> Test Mode <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                    </div>
+
+                    <div class="col-3">
+                        <span> Test Mode <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                    </div>
+
+                    <div class="col-3">
+                        <span> Test Mode <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                    </div>
+                    <div class="col-12 text-center mt-5">
+                      <button mat-raised-button color="primary">Submit</button>
+                    </div>
+
+                </div>
+            </form>
+        </mat-card>
+    </div>
+

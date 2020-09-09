@@ -1,10 +1,17 @@
-<nav>
-  <a routerLink="tasks" routerLinkActive="active">Tasks</a>
-  <a routerLink="automations" routerLinkActive="active">Automations</a>
-  <a routerLink="employees" routerLinkActive="active">Employees</a>
-  <a routerLink="inventory" routerLinkActive="active">Inventory</a>
-  <a routerLink="reports" routerLinkActive="active">Reports</a>
-</nav>
-<div class="content">
-  <router-outlet></router-outlet>
-</div>
+
+<mat-drawer-container class="nav-container">
+  <mat-drawer  [mode]="sideBarMode" [opened]="isOpened" #settingsSideNav>
+    <nav>
+
+      <a *ngFor="let item of navItems" [routerLink]="item.link" routerLinkActive="active" (click)="hideOnSmallScreens()">{{item.name}}</a>
+    </nav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button mat-button class="d-block d-md-none" (click)="toggleSideNav()" >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

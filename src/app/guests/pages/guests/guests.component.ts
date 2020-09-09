@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Guest } from '../guest.model';
+
 import { SelectionModel } from '@angular/cdk/collections';
+import { Guest } from '../../guest.model';
 
 @Component({
   selector: 'rbs-guests',

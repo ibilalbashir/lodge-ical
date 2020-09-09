@@ -1,0 +1,134 @@
+<div class="container-fluid">
+  <mat-card>
+  <h5 style="color: #585449">Corresspondence Setup</h5>
+
+  <form [formGroup]="loginForm">
+    <div class="example-container mt-3">
+      <mat-label>Solution</mat-label> <br />
+      <mat-form-field class="mat-form-field my-2" appearance="outline">
+        <input matInput formControlName="solution" /> <br />
+      </mat-form-field>
+      <br />
+      <div
+        *ngIf="
+          loginForm.controls['solution'].invalid &&
+          (loginForm.controls['solution'].touched ||
+            loginForm.controls['solution'].dirty)
+        "
+        class="mb-2"
+      >
+        <span
+          *ngIf="loginForm.controls['solution'].errors.required"
+          style="color: red"
+        >
+          Solution feild required
+        </span>
+      </div>
+
+      <mat-label class="my-mat-label">Signature</mat-label> <br />
+      <mat-form-field class="mat-form-field my-2" appearance="outline">
+        <input matInput formControlName="signature" />
+      </mat-form-field>
+      <br />
+      <div
+        *ngIf="
+          loginForm.controls['signature'].invalid &&
+          (loginForm.controls['signature'].touched ||
+            loginForm.controls['signature'].dirty)
+        "
+        class="mb-2"
+      >
+        <span
+          *ngIf="loginForm.controls['signature'].errors.required"
+          style="color: red"
+        >
+          Signature feild required
+        </span>
+      </div>
+
+      <mat-label>Title</mat-label> <br />
+      <mat-form-field class="mat-form-field my-2" appearance="outline">
+        <input matInput formControlName="title" /> <br />
+      </mat-form-field>
+      <br />
+      <div
+        *ngIf="
+          loginForm.controls['title'].invalid &&
+          (loginForm.controls['title'].touched ||
+            loginForm.controls['title'].dirty)
+        "
+        class="mb-2"
+      >
+        <span
+          *ngIf="loginForm.controls['title'].errors.required"
+          style="color: red"
+        >
+          Title feild required
+        </span>
+      </div>
+    </div>
+
+    <div class="container-fluid my-4">
+      <div class="row">
+        <div class="col-12">
+          <span class="enableStatus"> <b> Enabled </b> </span>
+        </div>
+
+
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-12  toggle-div">
+              <mat-label ngClass="labelBeforeSlide"
+                >Formal Soulations on Guest Correspondence</mat-label
+              >
+              <mat-slide-toggle
+                class="correspondence-toggle"
+              ></mat-slide-toggle>
+            </div>
+
+            <div class="col-12  toggle-div">
+              <mat-label ngClass="labelBeforeSlide"
+                >Return Address on Envelopers</mat-label
+              >
+              <mat-slide-toggle
+                class="correspondence-toggle"
+              ></mat-slide-toggle>
+            </div>
+
+            <div class="col-12  toggle-div">
+              <mat-label ngClass="labelBeforeSlide"
+                >Logo and Company Footer on Correspondence</mat-label
+              >
+              <mat-slide-toggle
+                class="correspondence-toggle"
+              ></mat-slide-toggle>
+            </div>
+
+            <div class="col-12 toggle-div">
+              <mat-label ngClass="labelBeforeSlide"
+                >Update Correspondence Automatically</mat-label
+              >
+              <mat-slide-toggle
+                class="correspondence-toggle"
+              ></mat-slide-toggle>
+            </div>
+
+            <div class="col-12 toggle-div">
+              <mat-label ngClass="labelBeforeSlide"
+                >Employee Contact name on Guest Correspondence</mat-label
+              >
+              <mat-slide-toggle
+                class="correspondence-toggle"
+              ></mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center mt-5">
+          <button mat-raised-button color="primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-card>
+</div>
+

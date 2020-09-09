@@ -10,17 +10,21 @@ import { SharedModule } from '../shared/shared.module';
 import { SettingsRoutingModule } from './settings-routing.module';
 import { RecurrenceComponent } from './automations/recurrence/recurrence.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
-
+import { MatCardModule } from '@angular/material/card';
+import { ClientComponent } from './client/client.component';
+import { EmailServerSetupComponent } from './email-server-setup/email-server-setup.component';
+import { CorrespondenceSetupComponent } from './correspondence-setup/correspondence-setup.component';
+import { EmailBodySetupComponent } from './email-body-setup/email-body-setup.component';
 
 @NgModule({
-  declarations: [SettingsComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent],
+  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent,EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent],
   imports: [
     CommonModule,
     MatCardModule,
     SharedModule,
     SettingsRoutingModule,
     MatFormFieldModule,
+
 
   ],
   exports: [
