@@ -19,9 +19,9 @@
       >
         <span
           *ngIf="loginForm.controls['solution'].errors.required"
-          style="color: red"
+          style="color: red" class="std-error-msg"
         >
-          Solution feild required
+          *required field
         </span>
       </div>
 
@@ -40,9 +40,9 @@
       >
         <span
           *ngIf="loginForm.controls['signature'].errors.required"
-          style="color: red"
+          style="color: red" class="std-error-msg"
         >
-          Signature feild required
+        *required field
         </span>
       </div>
 
@@ -61,9 +61,9 @@
       >
         <span
           *ngIf="loginForm.controls['title'].errors.required"
-          style="color: red"
+          style="color: red" class="std-error-msg"
         >
-          Title feild required
+        *required field
         </span>
       </div>
     </div>
