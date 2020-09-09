@@ -16,7 +16,7 @@
                         <div
                             *ngIf="testForm.controls['businessName'].invalid && (testForm.controls['businessName'].dirty || testForm.controls['businessName'].touched)">
                             <div *ngIf="testForm.controls['businessName'].errors.required" style="color: red;"
-                                class="my-2">
+                                class="my-2 std-error-msg">
                                 *Business Name is required.
                             </div>
                         </div>
