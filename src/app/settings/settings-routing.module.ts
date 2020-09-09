@@ -11,6 +11,7 @@ import { EmailServerSetupComponent } from './email-server-setup/email-server-set
 import { ClientComponent } from './client/client.component';
 import { EmailBodySetupComponent } from './email-body-setup/email-body-setup.component';
 import { CorrespondenceSetupComponent } from './correspondence-setup/correspondence-setup.component';
+import { LogoSetupComponent } from './logo-setup/logo-setup.component';
 
 const settingsRoutes: Routes = [
   {
@@ -26,6 +27,7 @@ const settingsRoutes: Routes = [
       { path: 'client', component: ClientComponent },
       { path: 'email-body', component: EmailBodySetupComponent },
       { path: 'correspondence', component: CorrespondenceSetupComponent },
+      { path: 'logo', component: LogoSetupComponent },
       { path: '', redirectTo: 'tasks', pathMatch: 'full' }
     ]
   }

@@ -15,16 +15,18 @@ import { ClientComponent } from './client/client.component';
 import { EmailServerSetupComponent } from './email-server-setup/email-server-setup.component';
 import { CorrespondenceSetupComponent } from './correspondence-setup/correspondence-setup.component';
 import { EmailBodySetupComponent } from './email-body-setup/email-body-setup.component';
+import { LogoSetupComponent } from './logo-setup/logo-setup.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
-  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent,EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent],
+  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent,EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent],
   imports: [
     CommonModule,
     MatCardModule,
     SharedModule,
     SettingsRoutingModule,
     MatFormFieldModule,
-
+    NgxDropzoneModule,
 
   ],
   exports: [

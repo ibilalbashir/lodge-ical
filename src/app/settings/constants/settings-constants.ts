@@ -36,5 +36,9 @@ export const SettingsConstants = {
       name: 'Correspondence Setup',
       link:'correspondence'
     },
+    {
+      name: 'Logo',
+      link: 'logo'
+    }
   ]
 }
