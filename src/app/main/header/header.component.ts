@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'rbs-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.less']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
 
   public tabs = [
     { title: 'Dashboard', route: 'dashboard' },
@@ -15,10 +16,21 @@ export class HeaderComponent implements OnInit {
     { title: 'Guests', route: 'guests' },
     { title: 'Resources', route: 'resources' }
   ];
-
-  constructor() { }
-
-  ngOnInit(): void {
+  currentRoute: string;
+  isHeader: boolean
+  constructor(private router: Router) {
+    this.isHeader = true
   }
 
+  ngOnInit(): void {
+
+
+  }
+  ngAfterViewInit() {
+
+  }
+
+
 }
+
+

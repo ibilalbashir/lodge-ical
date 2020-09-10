@@ -1,29 +1,27 @@
-
 <div>
+  <div class="container">
+    <div class="text-container">
+    </div>
+  </div>
+  <div class="form-container">
+    <div class="form-card">
+      <h1 style="color:black;">SignIn </h1><br>
+      <hr>
+      <div class="my-form">
+        <form>
+          <input class="input" id="email" type="email" placeholder="Email" (input)="SingInEmail($event)">
+          <input class="input mt-2" id="password" type="password" placeholder="Password"
+            (input)="SingInPassword($event)">
+          <button type="submit" [disabled]="!button" class="btn btn-primary mt-2" (click)="submit()">Sign In
+          </button>
+        </form>
 
-    <div class="container">
-        <div class="text-container">
+        <hr><br>
+        <div class="form-end">
 
         </div>
+        <br>
+      </div>
     </div>
-
-    <div class="form-container">
-        <div class="form-card">
-            <h1 style="color:black;">SignIn </h1><br>
-            <hr>
-            <div class="my-form">
-                <form>
-                    <input class="input" id="email" type="email" placeholder="Email">
-                    <input class="input" id="password" type="password" placeholder="Password">
-                    <button type="submit" class="btn btn-primary" style="color:black;">Sign In</button>
-                </form>
-                <hr><br>
-                <div class="form-end">
-                    <p style="color:black;">Don't have any account?</p><br><br>
-                    <a class="signin-link" [routerLink]="['/singup']" routerLinkActive="router-link-active">Sign Up</a>
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>

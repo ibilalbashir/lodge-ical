@@ -6,11 +6,9 @@ import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angula
   styleUrls: ['./client.component.less']
 })
 export class ClientComponent implements OnInit {
-  // testForm = new FormGroup({
-  //   bname: new FormControl('', Validators.required),
-  // })
+
   testForm: FormGroup;
-  bname: any;
+
   constructor(private fb: FormBuilder) {
     this.testForm = fb.group({
       businessName: ['', Validators.required],
