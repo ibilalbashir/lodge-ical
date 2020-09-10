@@ -68,6 +68,6 @@ export class AppComponent {
   public animationState: number;
 
   public onActivate(): void {
-    this.animationState = this.route.firstChild.snapshot.data['routeIdx'];
+    // this.animationState = this.route.firstChild.snapshot.data['routeIdx'];
   }
 }
