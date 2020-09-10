@@ -11,7 +11,7 @@ export class EmailBodySetupComponent implements OnInit {
 
 
   
-  loginForm = new FormGroup({
+  EmailBodySetup = new FormGroup({
     recordType:new FormControl('',Validators.required),
     subject:new FormControl('',Validators.required),
     replyTo:new FormControl('',Validators.required),
