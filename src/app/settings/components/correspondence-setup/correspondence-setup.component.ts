@@ -7,7 +7,7 @@ import { FormGroup , FormControl , FormBuilder , NgForm , Validators } from '@an
 })
 export class CorrespondenceSetupComponent implements OnInit {
 
-  CorrespondenceSetup = new FormGroup({
+  loginForm = new FormGroup({
     solution:new FormControl('',Validators.required),
     signature:new FormControl('',Validators.required),
     title:new FormControl('',Validators.required)

@@ -2,7 +2,7 @@
   <mat-card>
   <h5 >Corresspondence Setup</h5>
 
-  <form [formGroup]="CorrespondenceSetup">
+  <form [formGroup]="loginForm">
     <div class="example-container mt-3">
       <mat-label>Solution</mat-label> <br />
       <mat-form-field class="mat-form-field my-2" appearance="outline">
@@ -11,14 +11,14 @@
       <br />
       <div
         *ngIf="
-        CorrespondenceSetup.controls['solution'].invalid &&
-          (CorrespondenceSetup.controls['solution'].touched ||
-          CorrespondenceSetup.controls['solution'].dirty)
+          loginForm.controls['solution'].invalid &&
+          (loginForm.controls['solution'].touched ||
+            loginForm.controls['solution'].dirty)
         "
         class="mb-2"
       >
         <span
-          *ngIf="CorrespondenceSetup.controls['solution'].errors.required"
+          *ngIf="loginForm.controls['solution'].errors.required"
           class="std-error-msg"
         >
           *required field
@@ -32,14 +32,14 @@
       <br />
       <div
         *ngIf="
-        CorrespondenceSetup.controls['signature'].invalid &&
-          (CorrespondenceSetup.controls['signature'].touched ||
-          CorrespondenceSetup.controls['signature'].dirty)
+          loginForm.controls['signature'].invalid &&
+          (loginForm.controls['signature'].touched ||
+            loginForm.controls['signature'].dirty)
         "
         class="mb-2"
       >
         <span
-          *ngIf="CorrespondenceSetup.controls['signature'].errors.required"
+          *ngIf="loginForm.controls['signature'].errors.required"
           class="std-error-msg"
         >
         *required field
@@ -53,14 +53,14 @@
       <br />
       <div
         *ngIf="
-        CorrespondenceSetup.controls['title'].invalid &&
-          (CorrespondenceSetup.controls['title'].touched ||
-          CorrespondenceSetup.controls['title'].dirty)
+          loginForm.controls['title'].invalid &&
+          (loginForm.controls['title'].touched ||
+            loginForm.controls['title'].dirty)
         "
         class="mb-2"
       >
         <span
-          *ngIf="CorrespondenceSetup.controls['title'].errors.required"
+          *ngIf="loginForm.controls['title'].errors.required"
            class="std-error-msg"
         >
         *required field

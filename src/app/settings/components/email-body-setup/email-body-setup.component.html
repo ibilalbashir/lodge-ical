@@ -3,7 +3,7 @@
     <div class="col-12">
       <mat-card class="mb-4">
         <h5 class="red-font">Email Body Setup</h5>
-        <form [formGroup]="EmailBodySetup">
+        <form [formGroup]="loginForm">
 
             <mat-label>Record Type</mat-label> <br />
             <mat-form-field
@@ -15,14 +15,14 @@
             <br />
             <div
               *ngIf="
-              EmailBodySetup.controls['recordType'].invalid &&
-                (EmailBodySetup.controls['recordType'].touched ||
-                EmailBodySetup.controls['recordType'].dirty)
+                loginForm.controls['recordType'].invalid &&
+                (loginForm.controls['recordType'].touched ||
+                  loginForm.controls['recordType'].dirty)
               "
               class="mb-2"
             >
               <span
-                *ngIf="EmailBodySetup.controls['recordType'].errors.required"
+                *ngIf="loginForm.controls['recordType'].errors.required"
                 class="std-error-msg"
               >
                 *required field
@@ -39,14 +39,14 @@
             <br />
             <div
               *ngIf="
-              EmailBodySetup.controls['subject'].invalid &&
-                (EmailBodySetup.controls['subject'].touched ||
-                EmailBodySetup.controls['subject'].dirty)
+                loginForm.controls['subject'].invalid &&
+                (loginForm.controls['subject'].touched ||
+                  loginForm.controls['subject'].dirty)
               "
               class="mb-2"
             >
               <span
-                *ngIf="EmailBodySetup.controls['subject'].errors.required"
+                *ngIf="loginForm.controls['subject'].errors.required"
                 class="std-error-msg"
               >
                 *required field
@@ -63,14 +63,14 @@
             <br />
             <div
               *ngIf="
-              EmailBodySetup.controls['replyTo'].invalid &&
-                (EmailBodySetup.controls['replyTo'].touched ||
-                EmailBodySetup.controls['replyTo'].dirty)
+                loginForm.controls['replyTo'].invalid &&
+                (loginForm.controls['replyTo'].touched ||
+                  loginForm.controls['replyTo'].dirty)
               "
               class="mb-2"
             >
               <span
-                *ngIf="EmailBodySetup.controls['replyTo'].errors.required"
+                *ngIf="loginForm.controls['replyTo'].errors.required"
                 class="std-error-msg"
               >
                 *required field
@@ -87,14 +87,14 @@
             <br />
             <div
               *ngIf="
-              EmailBodySetup.controls['cc'].invalid &&
-                (EmailBodySetup.controls['cc'].touched ||
-                EmailBodySetup.controls['cc'].dirty)
+                loginForm.controls['cc'].invalid &&
+                (loginForm.controls['cc'].touched ||
+                  loginForm.controls['cc'].dirty)
               "
               class="mb-2"
             >
               <span
-                *ngIf="EmailBodySetup.controls['cc'].errors.required"
+                *ngIf="loginForm.controls['cc'].errors.required"
                 class="std-error-msg"
               >
                 *required field
@@ -111,14 +111,14 @@
             <br />
             <div
               *ngIf="
-              EmailBodySetup.controls['bcc'].invalid &&
-                (EmailBodySetup.controls['bcc'].touched ||
-                EmailBodySetup.controls['bcc'].dirty)
+                loginForm.controls['bcc'].invalid &&
+                (loginForm.controls['bcc'].touched ||
+                  loginForm.controls['bcc'].dirty)
               "
               class="mb-2"
             >
               <span
-                *ngIf="EmailBodySetup.controls['bcc'].errors.required"
+                *ngIf="loginForm.controls['bcc'].errors.required"
                 class="std-error-msg"
               >
                 *required field
@@ -135,14 +135,14 @@
             <br />
             <div
               *ngIf="
-              EmailBodySetup.controls['header'].invalid &&
-                (EmailBodySetup.controls['header'].touched ||
-                EmailBodySetup.controls['header'].dirty)
+                loginForm.controls['header'].invalid &&
+                (loginForm.controls['header'].touched ||
+                  loginForm.controls['header'].dirty)
               "
               class="mb-2"
             >
               <span
-                *ngIf="EmailBodySetup.controls['header'].errors.required"
+                *ngIf="loginForm.controls['header'].errors.required"
                 class="std-error-msg"
               >
                 *required field
@@ -159,14 +159,14 @@
             <br />
             <div
               *ngIf="
-              EmailBodySetup.controls['body'].invalid &&
-                (EmailBodySetup.controls['body'].touched ||
-                EmailBodySetup.controls['body'].dirty)
+                loginForm.controls['body'].invalid &&
+                (loginForm.controls['body'].touched ||
+                  loginForm.controls['body'].dirty)
               "
               class="mb-2"
             >
               <span
-                *ngIf="EmailBodySetup.controls['body'].errors.required"
+                *ngIf="loginForm.controls['body'].errors.required"
                 class="std-error-msg"
               >
                 *required field
@@ -183,14 +183,14 @@
             <br />
             <div
               *ngIf="
-              EmailBodySetup.controls['footer'].invalid &&
-                (EmailBodySetup.controls['footer'].touched ||
-                EmailBodySetup.controls['footer'].dirty)
+                loginForm.controls['footer'].invalid &&
+                (loginForm.controls['footer'].touched ||
+                  loginForm.controls['footer'].dirty)
               "
               class="mb-2"
             >
               <span
-                *ngIf="EmailBodySetup.controls['footer'].errors.required"
+                *ngIf="loginForm.controls['footer'].errors.required"
                 class="std-error-msg"
               >
                 *required field

@@ -17,7 +17,7 @@
           <div class="row">
             <div class="col  mt-3">
               <ngx-dropzone (change)="onSelect($event)" [disabled]="true" [expandable]="true">
-                <ngx-dropzone-label>No Logo <br> Uploaded</ngx-dropzone-label> 
+                <ngx-dropzone-label>No Logo <br> Uploaded</ngx-dropzone-label>
                 <ngx-dropzone-preview *ngFor="let f of files">
                   <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                 </ngx-dropzone-preview>
@@ -36,8 +36,7 @@
               </div>
             </div>
             <div class="col text-center mt-3">
-              <button (click)="drop.showFileSelector()"  class="logo-action-btn upload-btn white-font btn" ><mat-icon class="cloud-icon">backup</mat-icon> <span>Upload Image</span> </button> <br> 
-              
+              <button (click)="drop.showFileSelector()"  class="logo-action-btn upload-btn white-font" mat-raised-button><mat-icon>backup</mat-icon> <span>Upload Image</span> </button> <br>
               <button class="mt-3 logo-action-btn set-logo-btn white-font" mat-raised-button>Set as Logo</button> <br>
               <button class="mt-3 logo-action-btn cancel-btn white-font" mat-raised-button>Cancel</button>
             </div>
