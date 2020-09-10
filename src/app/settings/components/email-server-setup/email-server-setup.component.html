@@ -1,13 +1,13 @@
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <mat-card class="mb-4">
 
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title><span style="color: red;">Email Server Setup</span></mat-card-title>
-        </mat-card-header>
-
+<h5 class="red-font">Email Server Setup</h5>
         <form [formGroup]='emailServersetupForm'>
+
             <div class="row">
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-md-4">
                     <mat-label class="my-mat-label">Server</mat-label>
                     <mat-form-field appearance="outline" class="w-100">
                         <input matInput formControlName="server">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-md-4">
                     <mat-label class="my-mat-label">Port</mat-label>
                     <mat-form-field appearance="outline" class="w-100">
                         <input matInput formControlName="port">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-md-4">
                     <mat-label class="my-mat-label">Time Out</mat-label>
                     <mat-form-field appearance="outline" class="w-100">
                         <input matInput formControlName="timeOut">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-md-4">
                     <mat-label class="my-mat-label">User ID</mat-label>
                     <mat-form-field appearance="outline" class="w-100">
                         <input matInput formControlName="userID">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-md-4">
                     <mat-label class="my-mat-label">From</mat-label>
                     <mat-form-field appearance="outline" class="w-100">
                         <input matInput formControlName="from">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-md-4">
                     <mat-label class="my-mat-label">Hash</mat-label>
                     <mat-form-field appearance="outline" class="w-100">
                         <input matInput formControlName="hash">
@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-md-4">
                     <mat-label class="my-mat-label">Test To</mat-label>
                     <mat-form-field appearance="outline" class="w-100">
                         <input matInput formControlName="testTo">
@@ -97,32 +97,36 @@
                     </div>
                 </div>
 
-                <div class="col-3 col-md-8 pt-3">
-                    <span> Test Mode <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                <div class="col-md-6 col-lg-4 pt-3 col-9  toggle-btn-main-div">
+                    <span> Test Mode</span> <mat-slide-toggle ></mat-slide-toggle>
                 </div>
 
 
 
-                <div class="col-3">
-                    <span> Authentication <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                <div class="col-md-6 col-lg-4 pt-3 col-9 toggle-btn-main-div">
+                    <span> Authent<div class="sp-div"><span></span></div>ication</span>
+                    <mat-slide-toggle ></mat-slide-toggle>
                 </div>
 
-                <div class="col-3">
-                    <span> Send TLS <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                <div class="col-md-6 col-lg-4 pt-3 col-9 toggle-btn-main-div">
+                    <span> Send TLS</span>
+                     <mat-slide-toggle></mat-slide-toggle>
                 </div>
 
-                <div class="col-3">
-                    <span> Enable SSL <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                <div class="col-md-6 col-lg-4 pt-3 col-9 toggle-btn-main-div">
+                    <span> Enable SSL</span> <mat-slide-toggle ></mat-slide-toggle>
                 </div>
 
-                <div class="col-3">
-                    <span> Enable Status <mat-slide-toggle style="padding-top: 23px;"></mat-slide-toggle></span>
+                <div class="col-md-6 col-lg-4 pt-3 col-9 toggle-btn-main-div">
+                    <span> Enable Status</span> <mat-slide-toggle></mat-slide-toggle>
                 </div>
-                <div class="col-12 text-center mt-5">
-                    <button mat-raised-button color="primary">Submit</button>
-                </div>
+
 
             </div>
         </form>
     </mat-card>
+    </div>
+  </div>
+
+
 </div>

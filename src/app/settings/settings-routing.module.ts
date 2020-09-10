@@ -7,11 +7,13 @@ import { AutomationsComponent } from './automations/automations.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ReportsComponent } from './reports/reports.component';
-import { EmailServerSetupComponent } from './email-server-setup/email-server-setup.component';
-import { ClientComponent } from './client/client.component';
-import { EmailBodySetupComponent } from './email-body-setup/email-body-setup.component';
-import { CorrespondenceSetupComponent } from './correspondence-setup/correspondence-setup.component';
-import { LogoSetupComponent } from './logo-setup/logo-setup.component';
+;
+import { ClientSetupComponent } from './pages/client-setup/client-setup.component';
+import { EmailServerSetupComponent } from './components/email-server-setup/email-server-setup.component';
+import { ClientComponent } from './components/client/client.component';
+import { EmailBodySetupComponent } from './components/email-body-setup/email-body-setup.component';
+import { CorrespondenceSetupComponent } from './components/correspondence-setup/correspondence-setup.component';
+import { LogoSetupComponent } from './components/logo-setup/logo-setup.component';
 
 const settingsRoutes: Routes = [
   {
@@ -28,6 +30,7 @@ const settingsRoutes: Routes = [
       { path: 'email-body', component: EmailBodySetupComponent },
       { path: 'correspondence', component: CorrespondenceSetupComponent },
       { path: 'logo', component: LogoSetupComponent },
+      {path: 'client-setup', component: ClientSetupComponent},
       { path: '', redirectTo: 'tasks', pathMatch: 'full' }
     ]
   }

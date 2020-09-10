@@ -21,24 +21,8 @@ export const SettingsConstants = {
       link:'reports'
     },
     {
-      name: 'Client',
-      link:'client'
-    },
-    {
-      name: 'Email Server Setup',
-      link:'email'
-    },
-    {
-      name: 'Email Body Setup',
-      link:'email-body'
-    },
-    {
-      name: 'Correspondence Setup',
-      link:'correspondence'
-    },
-    {
-      name: 'Logo',
-      link: 'logo'
+      name: 'Client Setup',
+      link: 'client-setup'
     }
   ]
 }

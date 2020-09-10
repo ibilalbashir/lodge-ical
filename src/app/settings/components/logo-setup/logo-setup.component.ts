@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'rbs-logo-setup',
   templateUrl: './logo-setup.component.html',
-  styleUrls: ['./logo-setup.component.less']
+  styleUrls: ['./logo-setup.component.less'],
 })
 export class LogoSetupComponent implements OnInit {
 

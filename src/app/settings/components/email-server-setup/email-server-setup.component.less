@@ -1,0 +1,28 @@
+:host{
+    width: 100%;
+}
+// .mat-slide-toggle-bar {
+//   position: relative;
+//   width: 30px !important;
+//   height: 16px !important;
+//   flex-shrink: 0;
+//   border-radius: 8px;
+// }
+.toggle-btn-main-div{
+  display: flex;
+  justify-content: space-between;
+}
+.sp-div{
+  display: none;
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  .sp-div{
+    display: block;
+  }
+}
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+  .sp-div{
+    display: block
+  }
+}

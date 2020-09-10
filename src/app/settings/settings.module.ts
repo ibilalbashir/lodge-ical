@@ -11,15 +11,16 @@ import { SettingsRoutingModule } from './settings-routing.module';
 import { RecurrenceComponent } from './automations/recurrence/recurrence.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { ClientComponent } from './client/client.component';
-import { EmailServerSetupComponent } from './email-server-setup/email-server-setup.component';
-import { CorrespondenceSetupComponent } from './correspondence-setup/correspondence-setup.component';
-import { EmailBodySetupComponent } from './email-body-setup/email-body-setup.component';
-import { LogoSetupComponent } from './logo-setup/logo-setup.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { ClientSetupComponent } from './pages/client-setup/client-setup.component';
+import { EmailBodySetupComponent } from './components/email-body-setup/email-body-setup.component';
+import { CorrespondenceSetupComponent } from './components/correspondence-setup/correspondence-setup.component';
+import { EmailServerSetupComponent } from './components/email-server-setup/email-server-setup.component';
+import { ClientComponent } from './components/client/client.component';
+import { LogoSetupComponent } from './components/logo-setup/logo-setup.component';
 
 @NgModule({
-  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent,EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent],
+  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent,EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent, ClientSetupComponent],
   imports: [
     CommonModule,
     MatCardModule,

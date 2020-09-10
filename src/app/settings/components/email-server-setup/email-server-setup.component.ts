@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angular/forms';
 @Component({
   selector: 'rbs-email-server-setup',
   templateUrl: './email-server-setup.component.html',
-  styleUrls: ['./email-server-setup.component.less']
+  styleUrls: ['./email-server-setup.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
 export class EmailServerSetupComponent implements OnInit {
   emailServersetupForm: FormGroup;
