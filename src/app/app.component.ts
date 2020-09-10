@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { query, style, group, animate, trigger, transition } from '@angular/animations';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 const left = [
   query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
@@ -52,8 +53,17 @@ const right = [
 })
 export class AppComponent {
   title = 'Lodge-iCal';
+  isHeader = true
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, public router: Router) {
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd)
+    ).subscribe(x => {
+
+      console.log(x['url'] === '/login')
+      x['url'] == '/login' ? this.isHeader = false : this.isHeader = true
+    })
+  }
 
   public animationState: number;
 
