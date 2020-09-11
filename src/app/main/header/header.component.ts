@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { AuthGuardService } from '../../auth-guard.service';
 import { filter } from 'rxjs/operators';
+import { from } from 'rxjs';
 @Component({
   selector: 'rbs-header',
   templateUrl: './header.component.html',
@@ -18,7 +20,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   ];
   currentRoute: string;
   isHeader: boolean
-  constructor(private router: Router) {
+  constructor(private router: Router, private _user: AuthGuardService) {
     this.isHeader = true
   }
 
@@ -28,6 +30,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {
 
+  }
+
+  Logout() {
+
+    this._user.deleteToken();
+    this.router.navigate(['login']);
   }
 
 

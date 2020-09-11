@@ -18,9 +18,9 @@ import { CorrespondenceSetupComponent } from './components/correspondence-setup/
 import { EmailServerSetupComponent } from './components/email-server-setup/email-server-setup.component';
 import { ClientComponent } from './components/client/client.component';
 import { LogoSetupComponent } from './components/logo-setup/logo-setup.component';
-
+// './pages/client-setup/client-setup.component'
 @NgModule({
-  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent,EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent, ClientSetupComponent],
+  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent, EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent, ClientSetupComponent],
   imports: [
     CommonModule,
     MatCardModule,

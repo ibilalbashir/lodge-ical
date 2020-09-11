@@ -11,9 +11,10 @@ import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 
-  { path: 'login', component: SinginComponent },
+  { path: 'login', component: SinginComponent, data: { routeIdx: 0 }, pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full', canActivate: [AuthGuard] },
 
-  { path: 'dashboard', component: DashboardComponent, data: { routeIdx: 0 }, canActivate: [AuthGuard] },
+  // { path: 'dashboard', component: DashboardComponent, data: { routeIdx: 0 }, canActivate: [AuthGuard] },
   {
     path: 'reservations',
     loadChildren: () => import('./reservations/reservations.module').then(m => m.ReservationsModule),

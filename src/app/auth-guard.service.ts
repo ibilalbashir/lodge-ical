@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, CanActivate } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,17 @@ export class AuthGuardService {
     return !!token
   }
 
-  canActivate() : boolean {
-    if(!this.isAuthenticated()){
+  canActivate(): boolean {
+    if (!this.isAuthenticated()) {
       this.router.navigate(['login'])
       return false
     } else {
       return true
     }
+  }
+  deleteToken() {
+
+    localStorage.removeItem('token');
+
   }
 }
