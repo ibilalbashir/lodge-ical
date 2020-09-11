@@ -53,7 +53,8 @@ const right = [
 })
 export class AppComponent {
   title = 'Lodge-iCal';
-  isHeader = true
+  isHeader = true;
+  var: boolean = true;
 
   constructor(private route: ActivatedRoute, public router: Router) {
     this.router.events.pipe(
@@ -68,6 +69,12 @@ export class AppComponent {
   public animationState: number;
 
   public onActivate(): void {
-    // this.animationState = this.route.firstChild.snapshot.data['routeIdx'];
+    //  console.log(32132213)
+    if (this.var) {
+      this.router.navigate(['login']);
+      this.var = false;
+    }
+    this.animationState = this.route.firstChild.snapshot.data['/login'];
+
   }
 }

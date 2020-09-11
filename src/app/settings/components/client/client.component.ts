@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angular/forms';
 @Component({
   selector: 'rbs-client',
@@ -6,7 +6,7 @@ import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angula
   styleUrls: ['./client.component.less']
 })
 export class ClientComponent implements OnInit {
-
+  @Input() submitForm: string;
   testForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -19,7 +19,7 @@ export class ClientComponent implements OnInit {
       zip: ['', Validators.required],
       businessPhone1: ['', Validators.required],
       businessPhone2: ['', Validators.required],
-      businessEmail: ['', Validators.required],
+      businessEmail: ['', Validators.required, Validators.email],
       businessWebsite: ['', Validators.required],
       outfitterName: ['', Validators.required],
       outfitterLicenseNumber: ['', Validators.required],
@@ -28,6 +28,32 @@ export class ClientComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  public testConsole() {
+    console.log('Allah Kareem')
+  }
+  public submitClientForm() {
+    if (this.testForm.dirty && this.testForm.valid) {
+
+      alert('form submit successful')
+    } else {
+      // alert('form submit unsuccessful')
+
+
+      this.testForm.get('businessName').markAsTouched();
+      this.testForm.get('businessAddress4').markAsTouched();
+      this.testForm.get('businessAddress1').markAsTouched();
+      this.testForm.get('zip').markAsTouched();
+      this.testForm.get('city').markAsTouched();
+      this.testForm.get('state').markAsTouched();
+      this.testForm.get('businessPhone1').markAsTouched();
+      this.testForm.get('businessPhone2').markAsTouched();
+      this.testForm.get('businessEmail').markAsTouched();
+      this.testForm.get('businessWebsite').markAsTouched();
+      this.testForm.get('outfitterName').markAsTouched();
+      this.testForm.get('outfitterLicenseNumber').markAsTouched();
+
+    }
   }
 }
 

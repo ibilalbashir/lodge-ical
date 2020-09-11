@@ -32,8 +32,13 @@ export class SinginComponent implements OnInit {
   submit() {
     if (this.email == 'admin' && this.password == 'admin') {
 
+      localStorage.setItem('token', 'This is a token')
       console.log('hello')
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/reservations']);
+
+
+
+
     } else
       alert('Your email and password is incorrect');
   }
