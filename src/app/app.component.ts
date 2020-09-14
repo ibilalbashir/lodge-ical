@@ -60,8 +60,6 @@ export class AppComponent {
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe(x => {
-
-      console.log(x['url'] === '/login')
       x['url'] == '/login' ? this.isHeader = false : this.isHeader = true
     })
   }

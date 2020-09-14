@@ -33,7 +33,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
   collapseToggle(){
     this.collapse = !this.collapse
-    console.log(this.collapse);
 
   }
   open(){
