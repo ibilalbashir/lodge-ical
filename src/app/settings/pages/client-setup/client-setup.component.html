@@ -1,28 +1,267 @@
-<div class="container-fluid mt-4">
+<!-- <div class="container-fluid">
   <div class="row">
+    <div class="col-12 col-md-6">
+      <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+
+            <mat-panel-description>
+              Bussiness Setup
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <rbs-client></rbs-client>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="col-12 col-md-6">
+      <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+
+            <mat-panel-description>
+              Bussiness Setup
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <rbs-client></rbs-client>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>
+ -->
+
+
+
+
+
+
+
+<!--
+
+<ng-container *ngFor="let automation of automations">
+  <div class="automation">
+    <div class="title">
+      <div class="toggle" (click)="automation.open = !automation.open">
+        <i *ngIf="!automation.open" class="material-icons">add_box</i>
+        <i *ngIf="automation.open" class="material-icons">indeterminate_check_box</i>
+      </div>
+      <div>{{automation.trigger}}</div>
+    </div>
+    <div class="content" *ngIf="automation.open" [ngSwitch]="automation.type">
+      <rbs-client *ngSwitchCase="'guest-creation'"></rbs-client>
+    </div>
+  </div>
+  <div class="arrow"></div>
+  <div class="automation">
+    <div class="title">
+      <div class="toggle" (click)="automation.open = !automation.open"><i class="material-icons">add_box</i>
+        dsds
+      </div>
+      <div>{{automation.action}}</div> dsdds
+    </div>
+    <div class="content" *ngIf="automation.open">
+
+      ​
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <button mat-raised-button style="background-color: teal; color: #ffffff;"> CHOOSE REPORT </button>
+            <span style="size:5px; padding: 20px;"> <b> PORONUI_SNAPSHOT</b> </span>
+            ​
+            <br>
+            <mat-form-field appearance="none">
+
+              <mat-select placeholder="Email" style="width: 78%; margin-top: 10px; border: 1px solid teal;">
+                <mat-option value="option1" value="email">Option 1</mat-option>
+                <mat-option value="option2" placeholder="Email">Option 2</mat-option>
+              </mat-select>
+            </mat-form-field>
+            ​
+            ​
+            <mat-card style="background-color: #F9F7F1; margin-top: 20px;">
+              <p style="  color: #585449;"> Subject: </p><br>
+              ​
+              <div _ngcontent-ond-c185="" class="automation ng-star-inserted">
+
+                <div _ngcontent-ond-c185="">Your financial report is attached </div>
+
+              </div>
+
+
+              <p style="margin-top: 10px; margin-bottom: 10px; color: #585449;"> Body: </p>
+
+              <mat-form-field appearance="outline" style="width: 100%;   background-color: #ffffff; border: #333333; ">
+                <textarea matInput placeholder="Here are of your details{Report Name} lorem"
+                  style="height: 150px;"></textarea>
+              </mat-form-field> <br>
+
+              <div style="text-align: end; margin-top: 15px;">
+                <button mat-raised-button style="background-color: teal; color: #ffffff;"> +PARAMETERS </button>
+              </div>
+
+            </mat-card>
+            ​
+            ​
+            ​
+          </div>
+        </div>
+      </div>
+      ​
+
+
+      ​
+      <div class="container-fluid mt-3">
+        <div class="row">
+          <div class="col-md-3">
+            <span style="text-align: start;">
+              <button mat-raised-button> Cancel </button>
+            </span>
+          </div>
+
+          <div class="col-md-4"></div>
+          <div class="col-md-2">
+            <button mat-raised-button style="background-color: teal; color: #ffffff;"> SAVE </button>
+          </div>
+
+          <div class="col-md-2">
+            <button mat-raised-button style="background-color: teal; color: #ffffff; "> PREVIEW </button>
+          </div>
+
+        </div>
+      </div>
+      ​
+
+    </div>
+  </div>
+</ng-container>
+ -->
+
+
+
+
+
+<div class="mt-3" style="text-align: end;">
+
+  <button class="btn-default mx-3" (click)="extendAll()">Extend All</button>
+
+</div>
+
+
+
+
+<div class="container-fluid mt-3">
+  <div class="row">
+
+    <div class=" col-12 col-md-6 mt-3 pb-1">
+      <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState1 = true" (closed)="panelOpenState1 = false"
+          [expanded]="panelOpenState">
+
+          <mat-expansion-panel-header>
+
+            <mat-panel-description>
+              <i class="material-icons icon">add_box</i> Bussiness Setup
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <rbs-client></rbs-client>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="col-12 col-md-6 mt-3">
+      <!-- <rbs-correspondence-setup></rbs-correspondence-setup> -->
+      <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState2 = true" (closed)="panelOpenState2 = false"
+          [expanded]="panelOpenState">
+          <mat-expansion-panel-header>
+
+            <mat-panel-description>
+              <i class="material-icons icon">add_box</i> Correspondence Setup
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <rbs-correspondence-setup></rbs-correspondence-setup>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="col-12 d-block">
+          <!-- <rbs-logo-setup class="col-12"></rbs-logo-setup> -->
+          <mat-accordion class="mt-5">
+
+            <mat-expansion-panel (opened)="panelOpenState3 = true" (closed)="panelOpenState3 = false" class="mt-3"
+              [expanded]="panelOpenState">
+              <mat-expansion-panel-header>
+
+                <mat-panel-description>
+                  <i class="material-icons icon">add_box</i> Logo Setup
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <rbs-logo-setup class="col-12"></rbs-logo-setup>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <!-- <rbs-email-body-setup></rbs-email-body-setup> -->
+      <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState4 = true" (closed)="panelOpenState4 = false" class="mt-3"
+          [expanded]="panelOpenState">
+          <mat-expansion-panel-header>
+
+            <mat-panel-description>
+              <i class="material-icons icon">add_box</i> Email Body Setup
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <rbs-email-body-setup></rbs-email-body-setup>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
     <div class="col-md-6 col-12">
-      <rbs-email-server-setup></rbs-email-server-setup>
-      <rbs-logo-setup class="col-12 d-none d-md-block"></rbs-logo-setup>
+
+      <!-- <rbs-email-server-setup></rbs-email-server-setup> -->
+      <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState5 = true" (closed)="panelOpenState5 = false" class="mt-3"
+          [expanded]="panelOpenState">
+          <mat-expansion-panel-header>
+
+            <mat-panel-description>
+              <i class="material-icons icon">add_box</i> Email Server Setup
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <rbs-email-server-setup></rbs-email-server-setup>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
     </div>
-    <div class="col-12 d-block d-md-none">
-      <rbs-logo-setup class="col-12"></rbs-logo-setup>
-    </div>
-    <div class="col-12 col-md-6">
-      <rbs-email-body-setup></rbs-email-body-setup>
-    </div>
-    <div class="col-12 col-md-6 mt-5">
-      <rbs-correspondence-setup></rbs-correspondence-setup>
-    </div>
-    <div class="col-12 col-md-6">
-      <rbs-client></rbs-client>
-    </div>
+
+
+
+
     <div class="col-12 mt-4 text-center mb-4">
 
-      <button mat-raised-button color="primary" (click)="addCourse()">Submit</button>
+      <button class="btn-default" (click)="addCourse()">Submit</button>
 
-      <!-- <form class="form-horizontal" novalidate (ngSubmit)="addCourse()" [formGroup]="courseForm">
-      <button mat-raised-button color="primary" type="submit" [disabled]="!courseForm.valid" >Submit</button>
-    </form> -->
     </div>
 
   </div>
