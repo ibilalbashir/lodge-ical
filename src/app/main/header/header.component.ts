@@ -9,7 +9,7 @@ import { from } from 'rxjs';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
-
+  collapse: boolean = true;
   public tabs = [
     { title: 'Dashboard', route: 'dashboard' },
     { title: 'Reservations', route: 'reservations', notifications: 9 },
@@ -30,6 +30,14 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {
 
+  }
+  collapseToggle(){
+    this.collapse = !this.collapse
+    console.log(this.collapse);
+
+  }
+  open(){
+    this.collapse = true
   }
 
   Logout() {

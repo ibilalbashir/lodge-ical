@@ -2,10 +2,38 @@
 
 :host {
   display: flex;
+  width: 100%;
   background: @header-background;
   color: #FFFFFF;
   flex: 0 0 66px;
   align-items: center;
+
+  .lodgical-navbar {
+    background-color: @header-background;
+    padding: 0rem 1rem !important;
+    height: 100% !important;
+
+    button {
+      color: white;
+      background-color: #595959;
+    }
+
+    button:focus {
+      outline: 1px dotted;
+
+    }
+
+    .navbar-collapse {
+      height: 100% !important;
+
+      ul {
+        height: 100%;
+      }
+    }
+
+
+  }
+
 
   .icon-wrapper {
     width: 66px;
@@ -31,9 +59,9 @@
       outline: none;
     }
 
-    > div {
+    >div {
       position: relative;
-      
+
       .notification {
         width: 14px;
         height: 14px;
