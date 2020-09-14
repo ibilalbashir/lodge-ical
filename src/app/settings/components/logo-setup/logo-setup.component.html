@@ -55,7 +55,7 @@
 
   <mat-card-content>
     <div class="row">
-      <div class="col  mt-3 my-auto">
+      <div class="col-12 col-md-5  mt-3 my-auto">
         <ngx-dropzone (change)="onSelect($event)" [disabled]="true" [expandable]="true">
           <ngx-dropzone-label>No Logo <br> Uploaded</ngx-dropzone-label>
           <ngx-dropzone-preview *ngFor="let f of files">
@@ -63,7 +63,14 @@
           </ngx-dropzone-preview>
         </ngx-dropzone>
       </div>
-      <div class="col ">
+
+      <div class="mt-5 col-12 col-md-2  " style="text-align: center;">
+
+        <button class="btn-default m-3">Logo Uplaod</button>
+
+      </div>
+
+      <div class="col-12 col-md-5   ">
         <div #drop class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
           <ngx-dropzone-label>
 
