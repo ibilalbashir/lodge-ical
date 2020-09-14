@@ -1,28 +1,32 @@
 export const SettingsConstants = {
-  "navItems" : [
+  "navItems": [
     {
-      name: 'Tasks',
-      link:'tasks'
-    },
-    {
-      name: 'Automations',
-      link:'automations'
+
+      name: 'Client Setup',
+
+      link: 'client-setup'
+
     },
     {
       name: 'Employees',
-      link:'employees'
+      link: 'employees'
+
+    },
+    {
+      name: 'Automations',
+      link: 'automations'
     },
     {
       name: 'Inventory',
-      link:'inventory'
+      link: 'inventory'
     },
     {
       name: 'Reports',
-      link:'reports'
+      link: 'reports'
     },
     {
-      name: 'Client Setup',
-      link: 'client-setup'
+      name: 'Tasks',
+      link: 'tasks'
     }
   ]
 }

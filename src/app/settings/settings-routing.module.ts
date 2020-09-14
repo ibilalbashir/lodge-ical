@@ -20,9 +20,10 @@ const settingsRoutes: Routes = [
     path: 'settings',
     component: SettingsComponent,
     children: [
+      { path: 'client-setup', component: ClientSetupComponent },
+      { path: 'employees', component: EmployeesComponent },
       { path: 'tasks', component: TasksComponent },
       { path: 'automations', component: AutomationsComponent },
-      { path: 'employees', component: EmployeesComponent },
       { path: 'inventory', component: InventoryComponent },
       { path: 'reports', component: ReportsComponent },
       { path: 'email', component: EmailServerSetupComponent },
@@ -30,8 +31,8 @@ const settingsRoutes: Routes = [
       { path: 'email-body', component: EmailBodySetupComponent },
       { path: 'correspondence', component: CorrespondenceSetupComponent },
       { path: 'logo', component: LogoSetupComponent },
-      {path: 'client-setup', component: ClientSetupComponent},
-      { path: '', redirectTo: 'tasks', pathMatch: 'full' }
+
+      { path: '', redirectTo: 'client-setup', pathMatch: 'full' }
     ]
   }
 ];
