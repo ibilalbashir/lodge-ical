@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angular/forms'
-
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'rbs-email-body-setup',
@@ -11,6 +11,7 @@ export class EmailBodySetupComponent implements OnInit {
 
   name = "Angular";
   heigth = "1.125rem";
+  public Editor = ClassicEditor;
 
 
 

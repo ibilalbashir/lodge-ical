@@ -114,8 +114,11 @@
           <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
             <textarea #textArea (matInput)="changeHeigth(textArea)" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
               cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" [style.height]="heigth"
-              (focus)="heigth=textArea.scrollHeight+'px'" (blur)="heigth='1.125rem'"></textarea> <br />
+              (focus)="heigth=textArea.scrollHeight+'px'" (blur)="heigth='1.125rem'"></textarea>
+
+            <br />
           </mat-form-field>
+          <!-- <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor> -->
           <br />
           <!-- <div
               *ngIf="
@@ -176,6 +179,7 @@
             </div> -->
 
         </form>
+        <ckeditor #textArea [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
       </mat-card>
     </div>
   </div>
