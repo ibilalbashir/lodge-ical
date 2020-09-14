@@ -13,6 +13,19 @@ import { EmailServerSetupComponent } from '../../components/email-server-setup/e
 export class ClientSetupComponent implements OnInit {
   submitForm: string;
 
+  panelOpenState = false;
+  panelOpenState1 = true;
+  panelOpenState2 = true;
+  panelOpenState3 = true;
+  panelOpenState4 = true;
+  panelOpenState5 = true;
+
+  public automations = [
+    { trigger: 'Bussiness Setup', action: 'Correspondence Setup', type: 'guest-creation' },
+    { trigger: 'Logo Setup ' },
+    { trigger: 'Email Body', action: 'Email Server', type: 'recurrence' }
+  ];
+
   @ViewChild(ClientComponent) client: ClientComponent;
   @ViewChild(CorrespondenceSetupComponent) correspondenceSetup: CorrespondenceSetupComponent;
   @ViewChild(EmailBodySetupComponent) emailBody: EmailBodySetupComponent;
@@ -27,6 +40,11 @@ export class ClientSetupComponent implements OnInit {
     this.correspondenceSetup.submitClientForm();
     this.emailBody.submitClientForm();
     this.emailServer.submitClientForm();
+  }
+
+  extendAll() {
+
+    this.panelOpenState = !this.panelOpenState
   }
 
 }

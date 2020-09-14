@@ -2,18 +2,15 @@
   <div class="row">
     <div class="col-12">
       <mat-card class="mb-4">
-        <h5 class="red-font">Email Body Setup</h5>
+        <h5>Email Body Setup</h5>
         <form [formGroup]="EmailBodySetup">
 
-            <mat-label>Record Type</mat-label> <br />
-            <mat-form-field
-              class="mat-form-field my-2 w-100"
-              appearance="outline"
-            >
-              <input matInput formControlName="recordType" /><br />
-            </mat-form-field>
-            <br />
-            <div
+          <mat-label>Record Type</mat-label> <br />
+          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+            <input matInput /><br />
+          </mat-form-field>
+          <br />
+          <!-- <div
               *ngIf="
               EmailBodySetup.controls['recordType'].invalid &&
                 (EmailBodySetup.controls['recordType'].touched ||
@@ -27,17 +24,14 @@
               >
                 *required field
               </span>
-            </div>
+            </div> -->
 
-            <mat-label class="my-mat-label">Subject</mat-label> <br />
-            <mat-form-field
-              class="mat-form-field my-2 w-100"
-              appearance="outline"
-            >
-              <input matInput formControlName="subject" />
-            </mat-form-field>
-            <br />
-            <div
+          <mat-label class="my-mat-label">Subject</mat-label> <br />
+          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+            <input matInput />
+          </mat-form-field>
+          <br />
+          <!-- <div
               *ngIf="
               EmailBodySetup.controls['subject'].invalid &&
                 (EmailBodySetup.controls['subject'].touched ||
@@ -51,17 +45,14 @@
               >
                 *required field
               </span>
-            </div>
+            </div> -->
 
-            <mat-label>Reply To</mat-label> <br />
-            <mat-form-field
-              class="mat-form-field my-2 w-100"
-              appearance="outline"
-            >
-              <input matInput formControlName="replyTo" /> <br />
-            </mat-form-field>
-            <br />
-            <div
+          <mat-label>Reply To</mat-label> <br />
+          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+            <input matInput /> <br />
+          </mat-form-field>
+          <br />
+          <!-- <div
               *ngIf="
               EmailBodySetup.controls['replyTo'].invalid &&
                 (EmailBodySetup.controls['replyTo'].touched ||
@@ -75,17 +66,14 @@
               >
                 *required field
               </span>
-            </div>
+            </div> -->
 
-            <mat-label>CC</mat-label> <br />
-            <mat-form-field
-              class="mat-form-field my-2 w-100"
-              appearance="outline"
-            >
-              <input matInput formControlName="cc" /> <br />
-            </mat-form-field>
-            <br />
-            <div
+          <mat-label>CC</mat-label> <br />
+          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+            <input matInput /> <br />
+          </mat-form-field>
+          <br />
+          <!-- <div
               *ngIf="
               EmailBodySetup.controls['cc'].invalid &&
                 (EmailBodySetup.controls['cc'].touched ||
@@ -99,17 +87,14 @@
               >
                 *required field
               </span>
-            </div>
+            </div> -->
 
-            <mat-label class="my-mat-label">BCC</mat-label> <br />
-            <mat-form-field
-              class="mat-form-field my-2 w-100"
-              appearance="outline"
-            >
-              <input matInput formControlName="bcc" />
-            </mat-form-field>
-            <br />
-            <div
+          <mat-label class="my-mat-label">BCC</mat-label> <br />
+          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+            <input matInput />
+          </mat-form-field>
+          <br />
+          <!-- <div
               *ngIf="
               EmailBodySetup.controls['bcc'].invalid &&
                 (EmailBodySetup.controls['bcc'].touched ||
@@ -123,17 +108,16 @@
               >
                 *required field
               </span>
-            </div>
+            </div> -->
 
-            <mat-label>Header</mat-label> <br />
-            <mat-form-field
-              class="mat-form-field my-2 w-100"
-              appearance="outline"
-            >
-              <input matInput formControlName="header" /> <br />
-            </mat-form-field>
-            <br />
-            <div
+          <mat-label>Header</mat-label> <br />
+          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+            <textarea #textArea (matInput)="changeHeigth(textArea)" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" [style.height]="heigth"
+              (focus)="heigth=textArea.scrollHeight+'px'" (blur)="heigth='1.125rem'"></textarea> <br />
+          </mat-form-field>
+          <br />
+          <!-- <div
               *ngIf="
               EmailBodySetup.controls['header'].invalid &&
                 (EmailBodySetup.controls['header'].touched ||
@@ -147,17 +131,14 @@
               >
                 *required field
               </span>
-            </div>
+            </div> -->
 
-            <mat-label>Body</mat-label> <br />
-            <mat-form-field
-              class="mat-form-field my-2 w-100"
-              appearance="outline"
-            >
-              <input matInput formControlName="body" /> <br />
-            </mat-form-field>
-            <br />
-            <div
+          <mat-label>Body</mat-label> <br />
+          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+            <input matInput /> <br />
+          </mat-form-field>
+          <br />
+          <!-- <div
               *ngIf="
               EmailBodySetup.controls['body'].invalid &&
                 (EmailBodySetup.controls['body'].touched ||
@@ -171,17 +152,14 @@
               >
                 *required field
               </span>
-            </div>
+            </div> -->
 
-            <mat-label>Footer</mat-label> <br />
-            <mat-form-field
-              class="mat-form-field my-2 w-100"
-              appearance="outline"
-            >
-              <input matInput formControlName="footer" /> <br />
-            </mat-form-field>
-            <br />
-            <div
+          <mat-label>Footer</mat-label> <br />
+          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+            <input matInput /> <br />
+          </mat-form-field>
+          <br />
+          <!-- <div
               *ngIf="
               EmailBodySetup.controls['footer'].invalid &&
                 (EmailBodySetup.controls['footer'].touched ||
@@ -195,7 +173,7 @@
               >
                 *required field
               </span>
-            </div>
+            </div> -->
 
         </form>
       </mat-card>
