@@ -30,7 +30,6 @@ const routes: Routes = [
     data: { routeIdx: 4 }
   },
   { path: 'resources', canActivate: [AuthGuard], component: ResourcesComponent, data: { routeIdx: 5 } },
-
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 
 

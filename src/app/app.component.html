@@ -1,4 +1,4 @@
 <rbs-header *ngIf="isHeader"></rbs-header>
 <div class="router-outlet-wrapper" [@animateRoutes]="animationState">
-  <router-outlet></router-outlet>
+  <router-outlet (activate)="onActivate()"></router-outlet>
 </div>
