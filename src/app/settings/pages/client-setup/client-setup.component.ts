@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, ViewEncapsulation } from '@angular/core';
 import { ClientComponent } from '../../components/client/client.component';
 import { CorrespondenceSetupComponent } from '../../components/correspondence-setup/correspondence-setup.component';
 import { EmailBodySetupComponent } from '../../components/email-body-setup/email-body-setup.component';
@@ -8,7 +8,8 @@ import { EmailServerSetupComponent } from '../../components/email-server-setup/e
 @Component({
   selector: 'rbs-client-setup',
   templateUrl: './client-setup.component.html',
-  styleUrls: ['./client-setup.component.less']
+  styleUrls: ['./client-setup.component.less'],
+  // encapsulation: ViewEncapsulation.None,
 })
 export class ClientSetupComponent implements OnInit {
   submitForm: string;
@@ -44,7 +45,8 @@ export class ClientSetupComponent implements OnInit {
 
   extendAll() {
 
-    this.panelOpenState = !this.panelOpenState
+    this.panelOpenState = !this.panelOpenState;
+
   }
 
 }

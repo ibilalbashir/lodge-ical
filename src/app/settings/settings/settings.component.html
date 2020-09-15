@@ -1,13 +1,13 @@
-
 <mat-drawer-container class="nav-container">
-  <mat-drawer  [mode]="sideBarMode" [opened]="isOpened" #settingsSideNav>
-    <nav>
+  <mat-drawer [mode]="sideBarMode" [opened]="isOpened" #settingsSideNav class="w-1">
+    <nav class="w-2">
 
-      <a *ngFor="let item of navItems" [routerLink]="item.link" routerLinkActive="active" (click)="hideOnSmallScreens()">{{item.name}}</a>
+      <a *ngFor="let item of navItems" [routerLink]="item.link" routerLinkActive="active"
+        (click)="hideOnSmallScreens()">{{item.name}}</a>
     </nav>
   </mat-drawer>
   <mat-drawer-content>
-    <button mat-button class="d-block d-md-none" (click)="toggleSideNav()" >
+    <button mat-button class="d-block d-md-none" (click)="toggleSideNav()">
       <mat-icon>menu</mat-icon>
     </button>
     <div class="content">

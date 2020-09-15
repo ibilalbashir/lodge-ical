@@ -1,6 +1,6 @@
 <mat-card class="example-card ">
   <mat-card-header>
-    <mat-card-title>Logo Setup</mat-card-title>
+
     <mat-card-subtitle>Add a business logo to display on billing reports. Business logos may have a minimum size of
       48X48 and maximum size of
       100X100 pixels. The image format can be in PNG, JPG and JPEG format.
@@ -14,7 +14,9 @@
           (change)="onSelect($event)">
           <ngx-dropzone-label>
 
-            No Logo <br> Uploaded
+            <span class="material-icons">
+              backup
+            </span>
 
           </ngx-dropzone-label>
           <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of selectedFiles" [file]="f"
@@ -34,7 +36,9 @@
         <div #drop class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
           <ngx-dropzone-label>
 
-            No Logo <br> Uploaded
+            <span class="material-icons">
+              backup
+            </span>
 
           </ngx-dropzone-label>
           <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
