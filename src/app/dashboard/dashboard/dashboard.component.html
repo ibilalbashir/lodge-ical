@@ -1,7 +1,7 @@
 <div class="todo">
   <div class="header">
     <div class="title">To Do</div>
-    <button class="icon" (click)="showAddReminder = !showAddReminder">
+    <button class="icon" (click)="showAddReminder = !showAddReminder" style="font-size: small; border-radius: 5px;">
       <i class="material-icons">add_box</i> ADD REMINDER
     </button>
   </div>
@@ -35,7 +35,8 @@
       <div class="search-input">
         <input type="text" placeholder="Enter guest name ...">
       </div>
-      <button class="primary">SEARCH</button>
+      <button class="btn btn-outline-success"
+        style="font-size: 12px; line-height: 16px;background-color:white;color:teal; font-weight: 900;">SEARCH</button>
     </div>
     <div class="section-subtitle">MOST RECENT</div>
     <rbs-account-overview *ngFor="let overview of accountOverviews" [data]="overview"></rbs-account-overview>
