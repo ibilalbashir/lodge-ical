@@ -17,10 +17,18 @@
             No Logo <br> Uploaded
 
           </ngx-dropzone-label>
-          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of selectedFiles" [file]="f"
+          <!-- <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of selectedFiles" [file]="f"
             [removable]="true" (removed)="onRemove(f)">
             <ngx-dropzone-label></ngx-dropzone-label>
-          </ngx-dropzone-image-preview>
+          </ngx-dropzone-image-preview> -->
+          <rbs-custom-dropzone-preview
+          ngProjectAs="ngx-dropzone-preview"
+          *ngFor="let f of selectedFiles"
+          [file]="f"
+          [removable]="true"
+          (removed)="onRemove(f)"
+        >
+        </rbs-custom-dropzone-preview>
         </div>
       </div>
 
@@ -37,10 +45,15 @@
             No Logo <br> Uploaded
 
           </ngx-dropzone-label>
-          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
-            [removable]="true" (removed)="onRemove(f)">
-            <ngx-dropzone-label></ngx-dropzone-label>
-          </ngx-dropzone-image-preview>
+
+            <rbs-custom-dropzone-preview
+            ngProjectAs="ngx-dropzone-preview"
+            *ngFor="let f of files"
+            [file]="f"
+            [removable]="true"
+            (removed)="onRemove(f)"
+          >
+          </rbs-custom-dropzone-preview>
         </div>
       </div>
 

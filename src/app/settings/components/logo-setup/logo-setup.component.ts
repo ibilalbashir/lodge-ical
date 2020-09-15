@@ -18,6 +18,7 @@ export class LogoSetupComponent implements OnInit {
 
 onSelect(event) {
   this.event = event
+  this.files = []
   this.files.push(...event.addedFiles);
 }
 
@@ -26,7 +27,7 @@ onRemove(event) {
 }
 seletedToUpload(){
   console.log(this.event);
-
+  this.selectedFiles = []
   this.selectedFiles.push(...this.event.addedFiles)
 }
 

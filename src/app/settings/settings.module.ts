@@ -20,9 +20,10 @@ import { ClientComponent } from './components/client/client.component';
 import { LogoSetupComponent } from './components/logo-setup/logo-setup.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { CustomDropzonePreviewComponent } from './components/logo-setup/custom-dropzone-preview/custom-dropzone-preview.component';
 // './pages/client-setup/client-setup.component'
 @NgModule({
-  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent, EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent, ClientSetupComponent],
+  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent, EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent, ClientSetupComponent, CustomDropzonePreviewComponent],
   imports: [
     CommonModule,
     MatCardModule,
