@@ -33,7 +33,6 @@ export class SinginComponent implements OnInit {
     if (this.email == 'admin' && this.password == 'admin') {
 
       localStorage.setItem('token', 'This is a token')
-      console.log('hello')
       this.router.navigate(['/reservations']);
 
 

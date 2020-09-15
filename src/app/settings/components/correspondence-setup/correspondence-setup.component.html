@@ -1,15 +1,15 @@
-<div class="container-fluid">
-  <mat-card>
-    <h5>Corresspondence Setup</h5>
+<div class="container-fluid pb-4">
 
-    <form [formGroup]="CorrespondenceSetup">
-      <div class="example-container mt-3">
-        <mat-label>Solution</mat-label> <br />
-        <mat-form-field class="mat-form-field my-2" appearance="outline">
-          <input matInput /> <br />
-        </mat-form-field>
-        <br />
-        <!-- <div
+
+
+  <form [formGroup]="CorrespondenceSetup">
+    <div class="example-container mt-3">
+      <mat-label>Solution</mat-label> <br />
+      <mat-form-field class="mat-form-field my-2" appearance="outline">
+        <input matInput /> <br />
+      </mat-form-field>
+      <br />
+      <!-- <div
         *ngIf="
         CorrespondenceSetup.controls['solution'].invalid &&
           (CorrespondenceSetup.controls['solution'].touched ||
@@ -25,12 +25,12 @@
         </span>
       </div> -->
 
-        <mat-label class="my-mat-label">Signature</mat-label> <br />
-        <mat-form-field class="mat-form-field my-2" appearance="outline">
-          <input matInput />
-        </mat-form-field>
-        <br />
-        <!-- <div
+      <mat-label class="my-mat-label">Signature</mat-label> <br />
+      <mat-form-field class="mat-form-field my-2" appearance="outline">
+        <input matInput />
+      </mat-form-field>
+      <br />
+      <!-- <div
         *ngIf="
         CorrespondenceSetup.controls['signature'].invalid &&
           (CorrespondenceSetup.controls['signature'].touched ||
@@ -46,12 +46,12 @@
         </span>
       </div> -->
 
-        <mat-label>Title</mat-label> <br />
-        <mat-form-field class="mat-form-field my-2" appearance="outline">
-          <input matInput /> <br />
-        </mat-form-field>
-        <br />
-        <!-- <div
+      <mat-label>Title</mat-label> <br />
+      <mat-form-field class="mat-form-field my-2" appearance="outline">
+        <input matInput /> <br />
+      </mat-form-field>
+      <br />
+      <!-- <div
         *ngIf="
         CorrespondenceSetup.controls['title'].invalid &&
           (CorrespondenceSetup.controls['title'].touched ||
@@ -66,45 +66,45 @@
         *required field
         </span>
       </div> -->
-      </div>
+    </div>
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <span class="enableStatus"> <b> Enabled </b> </span>
-          </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <span class="enableStatus"> <b> Enabled </b> </span>
+        </div>
 
 
-          <div class="col-12 col-md-6">
-            <div class="row">
-              <div class="col-12  toggle-div">
-                <mat-label ngClass="labelBeforeSlide">Formal Soulations on Guest Correspondence</mat-label>
-                <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-              </div>
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-12  toggle-div">
+              <mat-label ngClass="labelBeforeSlide">Formal Soulations on Guest Correspondence</mat-label>
+              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+            </div>
 
-              <div class="col-12  toggle-div">
-                <mat-label ngClass="labelBeforeSlide">Return Address on Envelopers</mat-label>
-                <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-              </div>
+            <div class="col-12  toggle-div">
+              <mat-label ngClass="labelBeforeSlide">Return Address on Envelopers</mat-label>
+              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+            </div>
 
-              <div class="col-12  toggle-div">
-                <mat-label ngClass="labelBeforeSlide">Logo and Company Footer on Correspondence</mat-label>
-                <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-              </div>
+            <div class="col-12  toggle-div">
+              <mat-label ngClass="labelBeforeSlide">Logo and Company Footer on Correspondence</mat-label>
+              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+            </div>
 
-              <div class="col-12 toggle-div">
-                <mat-label ngClass="labelBeforeSlide">Update Correspondence Automatically</mat-label>
-                <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-              </div>
+            <div class="col-12 toggle-div">
+              <mat-label ngClass="labelBeforeSlide">Update Correspondence Automatically</mat-label>
+              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+            </div>
 
-              <div class="col-12 toggle-div">
-                <mat-label ngClass="labelBeforeSlide">Employee Contact name on Guest Correspondence</mat-label>
-                <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-              </div>
+            <div class="col-12 toggle-div">
+              <mat-label ngClass="labelBeforeSlide">Employee Contact name on Guest Correspondence</mat-label>
+              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
             </div>
           </div>
         </div>
       </div>
-    </form>
-  </mat-card>
+    </div>
+  </form>
+
 </div>

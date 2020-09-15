@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class LogoSetupComponent implements OnInit {
 
   files: File[] = [];
+  selectedFiles: File[] = []
+  event
 
   constructor() { }
 
@@ -15,13 +17,17 @@ export class LogoSetupComponent implements OnInit {
   }
 
 onSelect(event) {
-  console.log(event);
+  this.event = event
   this.files.push(...event.addedFiles);
 }
 
 onRemove(event) {
-  console.log(event);
   this.files.splice(this.files.indexOf(event), 1);
+}
+seletedToUpload(){
+  console.log(this.event);
+
+  this.selectedFiles.push(...this.event.addedFiles)
 }
 
 }

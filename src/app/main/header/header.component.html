@@ -1,22 +1,70 @@
-<div class="icon-wrapper" *ngIf="isHeader">
 
-  <img src="assets/icons/header-icon.svg" alt="icon">
-</div>
-<div class="nav-item" *ngFor="let tab of tabs" [routerLink]="tab.route" routerLinkActive="active">
-  <div>
-    <span>{{tab.title}}</span>
-    <div *ngIf="tab.notifications" class="notification">{{tab.notifications}}</div>
+<nav class="navbar navbar-expand-lg navbar-light lodgical-navbar w-100" *ngIf="isHeader">
+  <a class="navbar-brand" href="#"> <img src="assets/icons/header-icon.svg" alt="icon"></a>
+  <div class="spacer d-block d-md-none"></div>
+  <button
+    class="hamburger-icon"
+    type="button"
+    data-toggle="collapse"
+    data-target="#myNavbar"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+
+    [matMenuTriggerFor]="navbarItems"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #navbarItems="matMenu">
+    <button mat-menu-item *ngFor="let item of tabs" [routerLink]="item.route">
+
+      <span>{{item.title}}</span>
+    </button>
+    <button class="button icon">
+      <i _ngcontent-brs-c146="" class="material-icons">add_box</i>NEW
+      RESERVATION
+    </button>
+    <div class="d-flex justify-content-center p-3" [matMenuTriggerFor]="appSubMenu" (click)="$event.stopPropagation();">
+      <div>John Doe</div>
+      <i class="material-icons">account_circle</i>
+    </div>
+
+  </mat-menu>
+      <mat-menu #appSubMenu="matMenu">
+        <button mat-menu-item>User Profile</button>
+        <button mat-menu-item routerLink="settings">Settings</button>
+        <button mat-menu-item (click)="Logout()">LogOut</button>
+      </mat-menu>
+
+  <div class="collapse navbar-collapse" id="myNavbar"  (click)="open()" [hidden]="collapse">
+    <ul class="navbar-nav mr-auto">
+      <li
+        class="nav-item"
+        *ngFor="let tab of tabs"
+        [routerLink]="tab.route"
+        routerLinkActive="active"
+      >
+        <div>
+          <span>{{ tab.title }}</span>
+          <div *ngIf="tab.notifications" class="notification">
+            {{ tab.notifications }}
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="spacer"></div>
+    <button class="button icon">
+      <i _ngcontent-brs-c146="" class="material-icons">add_box</i>NEW
+      RESERVATION
+    </button>
+    <div class="user" [matMenuTriggerFor]="appMenu">
+      <div>John Doe</div>
+      <i class="material-icons">account_circle</i>
+    </div>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item>User Profile</button>
+      <button mat-menu-item routerLink="settings">Settings</button>
+      <button mat-menu-item (click)="Logout()">LogOut</button>
+    </mat-menu>
   </div>
-</div>
-<div class="spacer"></div>
-<button class="button icon"><i _ngcontent-brs-c146="" class="material-icons">add_box</i>NEW RESERVATION</button>
-<div class="user" [matMenuTriggerFor]="appMenu">
-  <div>John Doe</div>
-  <i class="material-icons">account_circle</i>
-</div>
-<mat-menu #appMenu="matMenu">
-  <button mat-menu-item>User Profile</button>
-  <button mat-menu-item routerLink="settings">Settings</button>
-  <button mat-menu-item (click)="Logout()">LogOut</button>
-
-</mat-menu>
+</nav>
