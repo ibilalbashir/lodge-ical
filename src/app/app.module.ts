@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SettingsModule } from './settings/settings.module';
 import { SinginComponent } from './singin/singin.component'
 import { from } from 'rxjs';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,9 @@ import { from } from 'rxjs';
 
     SettingsModule, // has to come before approutingmodule
     AppRoutingModule,
+
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

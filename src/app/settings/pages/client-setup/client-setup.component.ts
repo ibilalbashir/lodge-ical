@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ClientComponent } from '../../components/client/client.component';
 import { CorrespondenceSetupComponent } from '../../components/correspondence-setup/correspondence-setup.component';
 import { EmailBodySetupComponent } from '../../components/email-body-setup/email-body-setup.component';
@@ -9,19 +9,22 @@ import { EmailServerSetupComponent } from '../../components/email-server-setup/e
   selector: 'rbs-client-setup',
   templateUrl: './client-setup.component.html',
   styleUrls: ['./client-setup.component.less'],
-  // encapsulation: ViewEncapsulation.None,
+
 })
 export class ClientSetupComponent implements OnInit {
   submitForm: string;
-
+  public showRightMenu: boolean = false;
   panelOpenState = false;
-  panelOpenState1 = true;
-  panelOpenState2 = true;
-  panelOpenState3 = true;
-  panelOpenState4 = true;
-  panelOpenState5 = true;
+  panelOpenState1 = false;
+  panelOpenState2 = false;
+  panelOpenState3 = false;
+  panelOpenState4 = false;
+  panelOpenState5 = false;
 
-  public automations = [
+  val: boolean;
+
+
+  public automation = [
     { trigger: 'Bussiness Setup', action: 'Correspondence Setup', type: 'guest-creation' },
     { trigger: 'Logo Setup ' },
     { trigger: 'Email Body', action: 'Email Server', type: 'recurrence' }
@@ -45,8 +48,47 @@ export class ClientSetupComponent implements OnInit {
 
   extendAll() {
 
-    this.panelOpenState = !this.panelOpenState;
-
+    this.panelOpenState = !this.panelOpenState
   }
+
+  // pressMee(){
+  //   if(this.val === false){
+  //     console.log('Ya AllAH')
+  //     this.val = true;
+  //   }
+  // }
+
+  // pressMe(){
+
+  //   this.val = false;
+  //   this.val1 = true;
+
+
+
+  //   console.log('sasasa');
+  // }
+
+  onRightClick() {
+    console.log('sasasa')
+    this.showRightMenu = true;
+
+    // this.panelOpenState1 = true;
+    // this.panelOpenState2 = true;
+    // this.panelOpenState3 = false;
+    // this.panelOpenState4 = false;
+    // this.panelOpenState5 = false;
+    this.panelOpenState = !this.panelOpenState
+    this.panelOpenState2 = !this.panelOpenState2
+    this.panelOpenState3 = !this.panelOpenState3
+    this.panelOpenState4 = !this.panelOpenState4
+    this.panelOpenState5 = !this.panelOpenState5
+
+
+    return false;
+  }
+
+
+
+
 
 }
