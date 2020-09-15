@@ -1,25 +1,27 @@
-<div class="mt-3" style="text-align: end;">
 
-  <button class="btn-default mx-5" (click)="extendAll()">Extend All</button>
-
-</div>
+<div class="ml-4">
 
 
+<div  class="container-fluid mt-3"  >
+  <div class="row" style="width: 100%;" >
 
+    <div class=" col-12 col-md-6 mt-3 pb-1" >
+      <mat-accordion   [togglePosition]="'none'">
 
-<div class="container-fluid mt-3">
-  <div class="row" style="width: 100%;">
-
-    <div class=" col-12 col-md-6 mt-3 pb-1">
-      <mat-accordion>
-
-        <mat-expansion-panel (opened)="panelOpenState1 = true" (closed)="panelOpenState1 = false"
-          [expanded]="panelOpenState">
+        <mat-expansion-panel  (opened)="panelOpenState = true" hideToggle  (closed)="panelOpenState = false" [expanded]="panelOpenState">
 
           <mat-expansion-panel-header>
 
-            <mat-panel-description>
-              <i class="material-icons icon">add_box</i> Bussiness Setup
+            <mat-panel-description >
+
+              <i  (contextmenu)="onRightClick()" *ngIf="!panelOpenState" class="material-icons icon">  add_box</i> 
+              <i   *ngIf="panelOpenState"  class="material-icons icon">indeterminate_check_box</i> Bussiness Setup
+
+              <!-- <div class="toggle" (click)="automation.open = !automation.open">
+                <i *ngIf="!automation.open" class="material-icons">add_box</i>
+                <i *ngIf="automation.open" class="material-icons">indeterminate_check_box</i>
+              </div> -->
+              
             </mat-panel-description>
           </mat-expansion-panel-header>
 
@@ -28,16 +30,18 @@
         </mat-expansion-panel>
       </mat-accordion>
     </div>
+
     <div class="col-12 col-md-6 mt-3">
 
       <mat-accordion>
 
-        <mat-expansion-panel (opened)="panelOpenState2 = true" (closed)="panelOpenState2 = false"
-          [expanded]="panelOpenState">
+        <mat-expansion-panel (opened)="panelOpenState2 = true" hideToggle (closed)="panelOpenState2 = false"
+          [expanded]="panelOpenState2">
           <mat-expansion-panel-header>
 
             <mat-panel-description>
-              <i class="material-icons icon">add_box</i> Correspondence Setup
+              <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState2" class="material-icons icon">  add_box</i> 
+              <i  *ngIf="panelOpenState2"  class="material-icons icon">indeterminate_check_box</i>  Correspondence Setup
             </mat-panel-description>
           </mat-expansion-panel-header>
 
@@ -46,11 +50,12 @@
         </mat-expansion-panel>
       </mat-accordion>
     </div>
-    <div class="container-fluid ">
+
+    <!-- <div class="container-fluid ">
       <div class="row">
         <div class="col-12 d-block">
 
-          <mat-accordion class="mt-5">
+          <mat-accordion>
 
             <mat-expansion-panel (opened)="panelOpenState3 = true" (closed)="panelOpenState3 = false" class="mt-3"
               [expanded]="panelOpenState">
@@ -67,17 +72,79 @@
           </mat-accordion>
         </div>
       </div>
+    </div> -->
+
+   
+
+      <div class="col-12 col-md-6">
+
+        <mat-accordion>
+  
+          <mat-expansion-panel (opened)="panelOpenState3 = true" hideToggle (closed)="panelOpenState3 = false" class="mt-3"
+            [expanded]="panelOpenState3">
+            <mat-expansion-panel-header>
+  
+              <mat-panel-description>
+                <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState3" class="material-icons icon">  add_box</i>
+                <i  *ngIf="panelOpenState3"  class="material-icons icon">indeterminate_check_box</i>  
+                 Logo Setup
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+  
+            <div class="py-3">
+            <rbs-logo-setup class="col-12"></rbs-logo-setup>
+          </div>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <mat-accordion>
+
+  
+
+      <mat-expansion-panel (opened)="panelOpenState4 = true" hideToggle (closed)="panelOpenState4 = false" class="mt-3"
+      [expanded]="panelOpenState4">
+      <mat-expansion-panel-header>
+
+        <mat-panel-description >
+          <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState4" class="material-icons icon">  add_box</i> 
+          <i  *ngIf="panelOpenState4"  class="material-icons icon">indeterminate_check_box</i>  Email Server Setup
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <div class="padding-7">
+      <div class="py-3">
+        <rbs-email-server-setup ></rbs-email-server-setup>
+      </div>
     </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+        
+         
+  
+      </div>
+
+
+  
+
+   
+
+
     <div class="col-12 col-md-6">
 
       <mat-accordion>
 
-        <mat-expansion-panel (opened)="panelOpenState4 = true" (closed)="panelOpenState4 = false" class="mt-3"
-          [expanded]="panelOpenState">
+        <mat-expansion-panel (opened)="panelOpenState5 = true" hideToggle (closed)="panelOpenState5 = false" class="mt-3"
+          [expanded]="panelOpenState5">
           <mat-expansion-panel-header>
 
             <mat-panel-description>
-              <i class="material-icons icon">add_box</i> Email Body Setup
+              <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState5" class="material-icons icon">  add_box</i> 
+              <i  *ngIf="panelOpenState5"  class="material-icons icon">indeterminate_check_box</i> 
+              Email Body Setup
             </mat-panel-description>
           </mat-expansion-panel-header>
 
@@ -86,7 +153,8 @@
         </mat-expansion-panel>
       </mat-accordion>
     </div>
-    <div class="col-md-6 col-12">
+
+    <!-- <div class="col-md-6 col-12">
 
 
       <mat-accordion>
@@ -106,7 +174,7 @@
       </mat-accordion>
 
 
-    </div>
+    </div> -->
 
 
 
@@ -115,8 +183,12 @@
 
   </div>
 </div>
-<div class="col-12 mt-4 text-center mb-4">
+</div>
+<div class="col-12 text-center mt-4 mb-4">
 
   <button class="btn-default" (click)="addCourse()">Submit</button>
 
 </div>
+
+
+
