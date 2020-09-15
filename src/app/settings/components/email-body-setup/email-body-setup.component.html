@@ -1,16 +1,16 @@
-<div class="container-fluid">
+<div class="container-fluid mb-4">
   <div class="row">
     <div class="col-12">
-      <mat-card class="mb-4">
-        <h5>Email Body Setup</h5>
-        <form [formGroup]="EmailBodySetup">
 
-          <mat-label>Record Type</mat-label> <br />
-          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-            <input matInput /><br />
-          </mat-form-field>
-          <br />
-          <!-- <div
+
+      <form [formGroup]="EmailBodySetup">
+
+        <mat-label>Record Type</mat-label> <br />
+        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+          <input matInput /><br />
+        </mat-form-field>
+        <br />
+        <!-- <div
               *ngIf="
               EmailBodySetup.controls['recordType'].invalid &&
                 (EmailBodySetup.controls['recordType'].touched ||
@@ -26,12 +26,12 @@
               </span>
             </div> -->
 
-          <mat-label class="my-mat-label">Subject</mat-label> <br />
-          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-            <input matInput />
-          </mat-form-field>
-          <br />
-          <!-- <div
+        <mat-label class="my-mat-label">Subject</mat-label> <br />
+        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+          <input matInput />
+        </mat-form-field>
+        <br />
+        <!-- <div
               *ngIf="
               EmailBodySetup.controls['subject'].invalid &&
                 (EmailBodySetup.controls['subject'].touched ||
@@ -47,12 +47,12 @@
               </span>
             </div> -->
 
-          <mat-label>Reply To</mat-label> <br />
-          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-            <input matInput /> <br />
-          </mat-form-field>
-          <br />
-          <!-- <div
+        <mat-label>Reply To</mat-label> <br />
+        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+          <input matInput /> <br />
+        </mat-form-field>
+        <br />
+        <!-- <div
               *ngIf="
               EmailBodySetup.controls['replyTo'].invalid &&
                 (EmailBodySetup.controls['replyTo'].touched ||
@@ -68,12 +68,12 @@
               </span>
             </div> -->
 
-          <mat-label>CC</mat-label> <br />
-          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-            <input matInput /> <br />
-          </mat-form-field>
-          <br />
-          <!-- <div
+        <mat-label>CC</mat-label> <br />
+        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+          <input matInput /> <br />
+        </mat-form-field>
+        <br />
+        <!-- <div
               *ngIf="
               EmailBodySetup.controls['cc'].invalid &&
                 (EmailBodySetup.controls['cc'].touched ||
@@ -89,12 +89,12 @@
               </span>
             </div> -->
 
-          <mat-label class="my-mat-label">BCC</mat-label> <br />
-          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-            <input matInput />
-          </mat-form-field>
-          <br />
-          <!-- <div
+        <mat-label class="my-mat-label">BCC</mat-label> <br />
+        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+          <input matInput />
+        </mat-form-field>
+        <br />
+        <!-- <div
               *ngIf="
               EmailBodySetup.controls['bcc'].invalid &&
                 (EmailBodySetup.controls['bcc'].touched ||
@@ -110,14 +110,17 @@
               </span>
             </div> -->
 
-          <mat-label>Header</mat-label> <br />
-          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-            <textarea #textArea (matInput)="changeHeigth(textArea)" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-              cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" [style.height]="heigth"
-              (focus)="heigth=textArea.scrollHeight+'px'" (blur)="heigth='1.125rem'"></textarea> <br />
-          </mat-form-field>
+        <mat-label>Header</mat-label> <br />
+        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+          <textarea #textArea (matInput)="changeHeigth(textArea)" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" [style.height]="heigth"
+            (focus)="heigth=textArea.scrollHeight+'px'" (blur)="heigth='1.125rem'"></textarea>
+
           <br />
-          <!-- <div
+        </mat-form-field>
+        <!-- <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor> -->
+        <br />
+        <!-- <div
               *ngIf="
               EmailBodySetup.controls['header'].invalid &&
                 (EmailBodySetup.controls['header'].touched ||
@@ -133,12 +136,13 @@
               </span>
             </div> -->
 
-          <mat-label>Body</mat-label> <br />
-          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+        <mat-label>Body</mat-label> <br />
+        <!-- <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
             <input matInput /> <br />
-          </mat-form-field>
-          <br />
-          <!-- <div
+          </mat-form-field> -->
+        <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+        <br />
+        <!-- <div
               *ngIf="
               EmailBodySetup.controls['body'].invalid &&
                 (EmailBodySetup.controls['body'].touched ||
@@ -154,12 +158,12 @@
               </span>
             </div> -->
 
-          <mat-label>Footer</mat-label> <br />
-          <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-            <input matInput /> <br />
-          </mat-form-field>
-          <br />
-          <!-- <div
+        <mat-label>Footer</mat-label> <br />
+        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
+          <input matInput /> <br />
+        </mat-form-field>
+        <br />
+        <!-- <div
               *ngIf="
               EmailBodySetup.controls['footer'].invalid &&
                 (EmailBodySetup.controls['footer'].touched ||
@@ -175,8 +179,9 @@
               </span>
             </div> -->
 
-        </form>
-      </mat-card>
+      </form>
+
+
     </div>
   </div>
 </div>

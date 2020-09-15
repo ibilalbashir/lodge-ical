@@ -19,6 +19,7 @@ import { EmailServerSetupComponent } from './components/email-server-setup/email
 import { ClientComponent } from './components/client/client.component';
 import { LogoSetupComponent } from './components/logo-setup/logo-setup.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 // './pages/client-setup/client-setup.component'
 @NgModule({
   declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent, EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent, ClientSetupComponent],
@@ -29,7 +30,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     SettingsRoutingModule,
     MatFormFieldModule,
     NgxDropzoneModule,
-    MatExpansionModule
+    MatExpansionModule,
+    CKEditorModule
 
   ],
   exports: [
