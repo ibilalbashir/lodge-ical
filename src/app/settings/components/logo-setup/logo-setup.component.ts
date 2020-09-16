@@ -16,19 +16,36 @@ export class LogoSetupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-onSelect(event) {
-  this.event = event
-  this.files = []
-  this.files.push(...event.addedFiles);
-}
+  onSelect(event) {
+    this.event = event
+    this.files = []
+    this.files.push(...event.addedFiles);
+  }
 
-onRemove(event) {
-  this.files.splice(this.files.indexOf(event), 1);
-}
-seletedToUpload(){
-  console.log(this.event);
-  this.selectedFiles = []
-  this.selectedFiles.push(...this.event.addedFiles)
-}
+
+  onUploadSelect(event) {
+    this.event = event
+    this.selectedFiles = []
+    this.selectedFiles.push(...event.addedFiles);
+  }
+  onupload(event) {
+    this.selectedFiles = []
+    this.selectedFiles.push(...event.addedFiles);
+  }
+
+  onRemove(event) {
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+
+  onselectedFile(event) {
+    this.selectedFiles.splice(this.selectedFiles.indexOf(event), 1);
+  }
+
+  seletedToUpload() {
+    console.log(this.event);
+    this.selectedFiles = []
+    this.selectedFiles.push(...this.event.addedFiles)
+  }
+
 
 }

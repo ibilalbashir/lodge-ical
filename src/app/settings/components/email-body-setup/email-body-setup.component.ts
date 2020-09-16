@@ -1,7 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, NgForm, Validators } from '@angular/forms'
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import * as InlineEditor from '@ckeditor/ckeditor5-build-inline';
+import {COMMA, ENTER, SPACE} from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
 
+
+export interface Fruit {
+  name: string;
+}
 @Component({
   selector: 'rbs-email-body-setup',
   templateUrl: './email-body-setup.component.html',
@@ -11,8 +17,15 @@ export class EmailBodySetupComponent implements OnInit {
 
   name = "Angular";
   heigth = "1.125rem";
-  public Editor = ClassicEditor;
+  public Editor = InlineEditor;
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA, SPACE];
+  fruits: Fruit[] = [
 
+  ]
 
 
   EmailBodySetup = new FormGroup({
@@ -57,6 +70,27 @@ export class EmailBodySetupComponent implements OnInit {
     setTimeout(() => {
       this.heigth = textArea.scrollHeight + "px";
     });
+  }
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our fruit
+    if ((value || '').trim()) {
+      this.fruits.push({name: value.trim()});
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+  remove(fruit: Fruit): void {
+    const index = this.fruits.indexOf(fruit);
+
+    if (index >= 0) {
+      this.fruits.splice(index, 1);
+    }
   }
 
 }
