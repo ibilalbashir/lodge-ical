@@ -14,6 +14,7 @@ import { EmailServerSetupComponent } from '../../components/email-server-setup/e
 export class ClientSetupComponent implements OnInit {
   submitForm: string;
   public showRightMenu: boolean = false;
+  panelOpenStateGlobal = false;
   panelOpenState = false;
   panelOpenState1 = false;
   panelOpenState2 = false;
@@ -48,6 +49,7 @@ export class ClientSetupComponent implements OnInit {
 
   extendAll() {
 
+
     this.panelOpenState = !this.panelOpenState
   }
 
@@ -55,13 +57,34 @@ export class ClientSetupComponent implements OnInit {
 
   onRightClick() {
 
+
+    //if(this.panelOpenState1 == false){
+    //this.panelOpenStateGlobal = !this.panelOpenStateGlobal
+    //}
     this.showRightMenu = true;
 
-    this.panelOpenState = !this.panelOpenState
-    this.panelOpenState2 = !this.panelOpenState2
-    this.panelOpenState3 = !this.panelOpenState3
-    this.panelOpenState4 = !this.panelOpenState4
-    this.panelOpenState5 = !this.panelOpenState5
+    if (this.panelOpenState == false) {
+      this.panelOpenState = !this.panelOpenState
+    }
+    if (this.panelOpenState2 == false) {
+      this.panelOpenState2 = !this.panelOpenState2
+    }
+    if (this.panelOpenState3 == false) {
+      this.panelOpenState3 = !this.panelOpenState3
+    }
+    if (this.panelOpenState4 == false) {
+      this.panelOpenState4 = !this.panelOpenState4
+    }
+    if (this.panelOpenState5 == false) {
+      this.panelOpenState5 = !this.panelOpenState5
+    }
+
+
+
+    // this.panelOpenState2 = !this.panelOpenState2
+    // this.panelOpenState3 = !this.panelOpenState3
+    // this.panelOpenState4 = !this.panelOpenState4
+    // this.panelOpenState5 = !this.panelOpenState5
 
 
     return false;
@@ -72,11 +95,26 @@ export class ClientSetupComponent implements OnInit {
     this.showRightMenu = true;
 
 
-    this.panelOpenState = !this.panelOpenState
-    this.panelOpenState2 = !this.panelOpenState2
-    this.panelOpenState3 = !this.panelOpenState3
-    this.panelOpenState4 = !this.panelOpenState4
-    this.panelOpenState5 = !this.panelOpenState5
+    if (this.panelOpenState == true) {
+      this.panelOpenState = !this.panelOpenState
+    }
+    if (this.panelOpenState2 == true) {
+      this.panelOpenState2= !this.panelOpenState2
+    }
+    if (this.panelOpenState3 == true) {
+      this.panelOpenState3 = !this.panelOpenState3
+    }
+    if (this.panelOpenState4 == true) {
+      this.panelOpenState4 = !this.panelOpenState4
+    }
+    if (this.panelOpenState5 == true) {
+      this.panelOpenState5 = !this.panelOpenState5
+    }
+    // this.panelOpenState = !this.panelOpenState
+    // this.panelOpenState2 = !this.panelOpenState2
+    // this.panelOpenState3 = !this.panelOpenState3
+    // this.panelOpenState4 = !this.panelOpenState4
+    // this.panelOpenState5 = !this.panelOpenState5
 
 
     return false;
