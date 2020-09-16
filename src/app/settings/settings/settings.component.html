@@ -1,6 +1,7 @@
 <mat-drawer-container class="nav-container">
-  <mat-drawer [mode]="sideBarMode" [opened]="isOpened" #settingsSideNav class="w-1">
-    <nav class="w-2">
+  <mat-drawer [mode]="sideBarMode" [opened]="isOpened" #settingsSideNav class="w-1"
+    style=" box-shadow: 0 3px 10px rgba(0,0,0,.15);">
+    <nav class="w-2" style=" box-shadow: 0 3px 10px rgba(0,0,0,.15);">
 
       <a *ngFor="let item of navItems" [routerLink]="item.link" routerLinkActive="active"
         (click)="hideOnSmallScreens()">{{item.name}}</a>
