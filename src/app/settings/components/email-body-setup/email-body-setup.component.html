@@ -68,10 +68,26 @@
               </span>
             </div> -->
 
-        <mat-label>CC</mat-label> <br />
+        <!-- <mat-label>CC</mat-label> <br />
         <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
           <input matInput /> <br />
+        </mat-form-field> -->
+        <mat-label>CC</mat-label>
+        <mat-form-field class="example-chip-list mat-form-field my-2 w-100" appearance="outline">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                     [removable]="removable" (removed)="remove(fruit)">
+              {{fruit.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
         </mat-form-field>
+
         <br />
         <!-- <div
               *ngIf="
@@ -111,13 +127,10 @@
             </div> -->
 
         <mat-label>Header</mat-label> <br />
-        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-          <textarea #textArea (matInput)="changeHeigth(textArea)" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" [style.height]="heigth"
-            (focus)="heigth=textArea.scrollHeight+'px'" (blur)="heigth='1.125rem'"></textarea>
+        <div class="mt-2 rounded">
 
-          <br />
-        </mat-form-field>
+          <ckeditor [editor]="Editor" data=""></ckeditor>
+        </div>
         <!-- <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor> -->
         <br />
         <!-- <div
@@ -140,7 +153,10 @@
         <!-- <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
             <input matInput /> <br />
           </mat-form-field> -->
-        <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+          <div class="mt-2 rounded">
+
+            <ckeditor [editor]="Editor" data=""></ckeditor>
+          </div>
         <br />
         <!-- <div
               *ngIf="
@@ -159,9 +175,10 @@
             </div> -->
 
         <mat-label>Footer</mat-label> <br />
-        <mat-form-field class="mat-form-field my-2 w-100" appearance="outline">
-          <input matInput /> <br />
-        </mat-form-field>
+        <div class="mt-2 rounded">
+
+          <ckeditor [editor]="Editor" data=""></ckeditor>
+        </div>
         <br />
         <!-- <div
               *ngIf="
