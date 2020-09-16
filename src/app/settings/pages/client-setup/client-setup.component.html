@@ -15,7 +15,8 @@
               <mat-panel-description>
 
                 <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState" class="material-icons icon"> add_box</i>
-                <i *ngIf="panelOpenState" class="material-icons icon">indeterminate_check_box</i> Bussiness Setup
+                <i (contextmenu)="onRightClickClose()" *ngIf="panelOpenState"
+                  class="material-icons icon">indeterminate_check_box</i> Bussiness Setup
 
 
               </mat-panel-description>
@@ -35,7 +36,8 @@
             <mat-expansion-panel-header>
               <mat-panel-description>
                 <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState2" class="material-icons icon"> add_box</i>
-                <i *ngIf="panelOpenState2" class="material-icons icon">indeterminate_check_box</i> Correspondence
+                <i (contextmenu)="onRightClickClose()" *ngIf="panelOpenState2"
+                  class="material-icons icon">indeterminate_check_box</i> Correspondence
                 Setup
               </mat-panel-description>
             </mat-expansion-panel-header>
@@ -58,7 +60,8 @@
 
               <mat-panel-description>
                 <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState3" class="material-icons icon"> add_box</i>
-                <i *ngIf="panelOpenState3" class="material-icons icon">indeterminate_check_box</i>
+                <i (contextmenu)="onRightClickClose()" *ngIf="panelOpenState3"
+                  class="material-icons icon">indeterminate_check_box</i>
                 Logo Setup
               </mat-panel-description>
             </mat-expansion-panel-header>
@@ -80,7 +83,8 @@
 
               <mat-panel-description>
                 <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState4" class="material-icons icon"> add_box</i>
-                <i *ngIf="panelOpenState4" class="material-icons icon">indeterminate_check_box</i> Email Server Setup
+                <i (contextmenu)="onRightClickClose()" *ngIf="panelOpenState4"
+                  class="material-icons icon">indeterminate_check_box</i> Email Server Setup
               </mat-panel-description>
             </mat-expansion-panel-header>
 
@@ -127,11 +131,15 @@
 
       <div class="col-12 col-md-6">
         <mat-accordion>
-          <mat-expansion-panel (opened)="panelOpenState4 = true" (closed)="panelOpenState4 = false" class="mt-3"
-            [expanded]="panelOpenState">
+          <mat-expansion-panel (opened)="panelOpenState5 = true" hideToggle (closed)="panelOpenState5 = false"
+            class="mt-3" [expanded]="panelOpenState5">
             <mat-expansion-panel-header>
               <mat-panel-description>
-                <i class="material-icons icon">add_box</i> Email Body Setup
+                <i (contextmenu)="onRightClick()" *ngIf="!panelOpenState5" class="material-icons icon"> add_box</i>
+                <i (contextmenu)="onRightClickClose()" *ngIf="panelOpenState5"
+                  class="material-icons icon">indeterminate_check_box</i>
+                Email Body Setup
+
               </mat-panel-description>
             </mat-expansion-panel-header>
             <rbs-email-body-setup></rbs-email-body-setup>

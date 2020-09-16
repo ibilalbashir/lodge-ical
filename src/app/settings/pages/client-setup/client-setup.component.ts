@@ -51,32 +51,27 @@ export class ClientSetupComponent implements OnInit {
     this.panelOpenState = !this.panelOpenState
   }
 
-  // pressMee(){
-  //   if(this.val === false){
-  //     console.log('Ya AllAH')
-  //     this.val = true;
-  //   }
-  // }
 
-  // pressMe(){
-
-  //   this.val = false;
-  //   this.val1 = true;
-
-
-
-  //   console.log('sasasa');
-  // }
 
   onRightClick() {
-    console.log('sasasa')
+
     this.showRightMenu = true;
 
-    // this.panelOpenState1 = true;
-    // this.panelOpenState2 = true;
-    // this.panelOpenState3 = false;
-    // this.panelOpenState4 = false;
-    // this.panelOpenState5 = false;
+    this.panelOpenState = !this.panelOpenState
+    this.panelOpenState2 = !this.panelOpenState2
+    this.panelOpenState3 = !this.panelOpenState3
+    this.panelOpenState4 = !this.panelOpenState4
+    this.panelOpenState5 = !this.panelOpenState5
+
+
+    return false;
+  }
+
+  onRightClickClose() {
+
+    this.showRightMenu = true;
+
+
     this.panelOpenState = !this.panelOpenState
     this.panelOpenState2 = !this.panelOpenState2
     this.panelOpenState3 = !this.panelOpenState3
