@@ -3,8 +3,8 @@
   <div class="details">{{data.bookingDetails}}</div>
   <div class="value-label">TOTAL DUE</div>
   <div class="value">{{data.balanceDue | currency}}</div>
-  <button class="btn btn-outline-success" *ngIf="!showContactPanel" (click)="showContactPanel = true"
-    style="font-size: 14px; line-height: 16px;background-color:white;color:teal;"><b>CONTACT</b></button>
+  <button class="primary" *ngIf="!showContactPanel" (click)="showContactPanel = true"><b>CONTACT</b></button>
+
   <div class="contact-panel" *ngIf="showContactPanel">
     <div class="contact-options">
       <div class="phone" (click)="selectContactMethod('phone')" [class.active]="selectedContactMethod === 'phone'"><i
