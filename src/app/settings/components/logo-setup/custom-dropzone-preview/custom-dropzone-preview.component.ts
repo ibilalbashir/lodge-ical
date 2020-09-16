@@ -15,6 +15,7 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 export class CustomDropzonePreviewComponent
   extends NgxDropzonePreviewComponent
   implements OnInit {
+
   public imagePath: SafeResourceUrl;
   imgURL: any;
   public message: string;
@@ -40,4 +41,5 @@ export class CustomDropzonePreviewComponent
       );
     };
   }
+
 }
