@@ -68,43 +68,87 @@
       </div> -->
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-3 py-5 d-none d-md-block d-lg-none d-none d-lg-block d-xl-none d-none d-xl-block">
       <div class="row">
-        <div class="col-12">
-          <span class="enableStatus"> <b> Enabled </b> </span>
+
+        <div class="col-12 col-md-9">
+          <mat-label ngClass="labelBeforeSlide">Formal Soulations on Guest Correspondence</mat-label>
+        </div>
+        <div class="col-12 col-md-3">
+          <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
         </div>
 
+        <div class="col-12 col-md-9 mt-3">
+          <mat-label ngClass="labelBeforeSlide">Return Address on Envelopers</mat-label>
+        </div>
+        <div class="col-12 col-md-3 mt-3">
+          <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+        </div>
 
-        <div class="col-12 col-md-6">
-          <div class="row">
-            <div class="col-12  toggle-div">
-              <mat-label ngClass="labelBeforeSlide">Formal Soulations on Guest Correspondence</mat-label>
-              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-            </div>
+        <div class="col-12 col-md-9 mt-3">
+          <mat-label ngClass="labelBeforeSlide">Logo and Company Footer on Correspondence</mat-label>
+        </div>
+        <div class="col-12 col-md-3 mt-3">
+          <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+        </div>
 
-            <div class="col-12  toggle-div">
-              <mat-label ngClass="labelBeforeSlide">Return Address on Envelopers</mat-label>
-              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-            </div>
+        <div class="col-12 col-md-9 mt-3">
+          <mat-label ngClass="labelBeforeSlide">Update Correspondence Automatically</mat-label>
+        </div>
+        <div class="col-12 col-md-3 mt-3">
+          <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+        </div>
 
-            <div class="col-12  toggle-div">
-              <mat-label ngClass="labelBeforeSlide">Logo and Company Footer on Correspondence</mat-label>
-              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-            </div>
+        <div class="col-12 col-md-9 mt-3">
+          <mat-label ngClass="labelBeforeSlide">Employee Contact name on Guest Correspondence</mat-label>
+        </div>
+        <div class="col-12 col-md-3 mt-3">
+          <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+        </div>
 
-            <div class="col-12 toggle-div">
-              <mat-label ngClass="labelBeforeSlide">Update Correspondence Automatically</mat-label>
-              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-            </div>
+      
+      </div>
+    </div>
 
-            <div class="col-12 toggle-div">
-              <mat-label ngClass="labelBeforeSlide">Employee Contact name on Guest Correspondence</mat-label>
-              <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
-            </div>
+
+
+      <!-------------   Visible on Small screen portion  --------------->
+
+      <div class="container-fluid d-block d-sm-none d-none d-sm-block d-md-none ">
+        <div class="row">
+          
+          <div class="col-12  toggle-div">
+            <mat-label ngClass="labelBeforeSlide">Formal Soulations on Guest Correspondence</mat-label>
+            <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+          </div>
+
+          <div class="col-12  toggle-div">
+            <mat-label ngClass="labelBeforeSlide">Return Address on Envelopers</mat-label>
+            <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+          </div>
+
+          <div class="col-12  toggle-div">
+            <mat-label ngClass="labelBeforeSlide">Logo and Company Footer on Correspondence</mat-label>
+            <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+          </div>
+
+          <div class="col-12 toggle-div">
+            <mat-label ngClass="labelBeforeSlide">Update Correspondence Automatically</mat-label>
+            <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
+          </div>
+
+          <div class="col-12 toggle-div">
+            <mat-label ngClass="labelBeforeSlide">Employee Contact name on Guest Correspondence</mat-label>
+            <mat-slide-toggle class="correspondence-toggle"></mat-slide-toggle>
           </div>
         </div>
       </div>
-    </div>
+
+      <!------------- End of Visible on Small screen portion  --------------->
+
+
+
+
   </form>
 
 </div>

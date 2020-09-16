@@ -21,9 +21,11 @@ import { LogoSetupComponent } from './components/logo-setup/logo-setup.component
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CustomDropzonePreviewComponent } from './components/logo-setup/custom-dropzone-preview/custom-dropzone-preview.component';
+//import { ReservationSetupComponent } from './components/reservation-setup/reservation-setup.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 // './pages/client-setup/client-setup.component'
 @NgModule({
-  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent, EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent, ClientSetupComponent, CustomDropzonePreviewComponent],
+  declarations: [EmailBodySetupComponent, CorrespondenceSetupComponent, SettingsComponent, EmailServerSetupComponent, TasksComponent, AutomationsComponent, EmployeesComponent, InventoryComponent, ReportsComponent, RecurrenceComponent, ClientComponent, LogoSetupComponent, ClientSetupComponent, CustomDropzonePreviewComponent, ],
   imports: [
     CommonModule,
     MatCardModule,
@@ -32,7 +34,8 @@ import { CustomDropzonePreviewComponent } from './components/logo-setup/custom-d
     MatFormFieldModule,
     NgxDropzoneModule,
     MatExpansionModule,
-    CKEditorModule
+    CKEditorModule,
+    MatDatepickerModule
 
   ],
   exports: [

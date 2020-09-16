@@ -14,6 +14,7 @@ import { ClientComponent } from './components/client/client.component';
 import { EmailBodySetupComponent } from './components/email-body-setup/email-body-setup.component';
 import { CorrespondenceSetupComponent } from './components/correspondence-setup/correspondence-setup.component';
 import { LogoSetupComponent } from './components/logo-setup/logo-setup.component';
+// import { ReservationSetupComponent } from './components/reservation-setup/reservation-setup.component';
 
 const settingsRoutes: Routes = [
   {
@@ -31,6 +32,7 @@ const settingsRoutes: Routes = [
       { path: 'email-body', component: EmailBodySetupComponent },
       { path: 'correspondence', component: CorrespondenceSetupComponent },
       { path: 'logo', component: LogoSetupComponent },
+    //  { path: 'reservation-setup', component:ReservationSetupComponent},
 
       { path: '', redirectTo: 'client-setup', pathMatch: 'full' }
     ]

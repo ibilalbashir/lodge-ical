@@ -27,6 +27,10 @@ export const SettingsConstants = {
     {
       name: 'Tasks',
       link: 'tasks'
-    }
+    },
+    // {
+    //   name: 'Reservation-Setup',
+    //   link: 'reservation-setup'
+    // }
   ]
 }
