@@ -17,10 +17,12 @@ import { SinginComponent } from './singin/singin.component'
 import { from } from 'rxjs';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SinginComponent,
+   
   ],
   imports: [
     BrowserModule,
